@@ -1,7 +1,8 @@
 $(document).ready(function(){
-
-if (matchMedia("screen and (min-width: 1024px)").matches) {
- $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 3px solid black; top: 120px; left:94.7%'>");
+  
+var remocon =function(){
+    console.log("aa");
+     $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 3px solid black; top: 120px; left:94.7%'>");
     var  container= $("#container").draggable();
     
     
@@ -38,7 +39,7 @@ if (matchMedia("screen and (min-width: 1024px)").matches) {
           scroll_height=$(document).scrollTop();
            sec_position.each(function(index,data){
             var pos = $(this).offset().top;
-               if(scroll_height > pos){
+               if(scroll_height > pos+1){
                 $("html,body").stop().animate({scrollTop:pos},1000);
                  $("#log").text(index+1);
             }
@@ -48,7 +49,7 @@ if (matchMedia("screen and (min-width: 1024px)").matches) {
          scroll_height=$(document).scrollTop();
           sec_position.each(function(index,data) {
            var pos = $(this).offset().top;  
-               if (scroll_height < pos) {      
+               if (scroll_height < (pos-1)) {      
                 $('html, body').stop().animate({scrollTop: pos},1000);  
                  $("#log").text(index+1);
                   return false;
@@ -61,15 +62,38 @@ if (matchMedia("screen and (min-width: 1024px)").matches) {
         top_ButtonImg.css({border: '0px',borderRadius: '50%'});
     });
      btm_ButtonImg.on("hover",function(){
+         console.log("aaaaa");
         btm_ButtonImg.css({border: '1px solid rgba(122,252,235,0.8)',borderRadius: '50%'});
     }).on("mouseleave",function(){
         btm_ButtonImg.css({border: '0px',borderRadius: '50%'});
     });
-    
-} else {
-  // 1024px 미만에서 사용할 JavaScript
 }
-           
+
+
+if (matchMedia("screen and (min-width: 1024px)").matches) {
+    remocon();
+}else{
+    
+}
+     $(window).resize(function() {
+        if(this.resizeTO) {
+            clearTimeout(this.resizeTO);
+        }
+        this.resizeTO = setTimeout(function() {
+            $(this).trigger('resizeEnd');
+        }, 0);
+    });
+    $(window).on('resizeEnd', function() {
+        var contain = $("#container");
+      var device_width=$(window).width();
+        if(device_width>1025){
+          $("#container").show();
+        }else{
+            $("#container").hide();
+        }
+    });
+
+
      
-   });
+});
    
