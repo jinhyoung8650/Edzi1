@@ -14,12 +14,11 @@
 @media all and (min-width: 1024.1px){
     header{
         width: 100%;
-        position: fixed;
     }
     #fbar{
         width: 100%;
         height: 1.5em;
-        background-color: white;
+        background-color: #e7e7e7;
     }
     #logobar{
         width: 100%;
@@ -37,24 +36,10 @@
         color:  floralwhite;
         margin: 0 30% 0 40%;
     }
-    #minibox{
-        list-style: none;
-        display: inline;
-        margin: 0 0 0 90%;
+    #login{
+        font-size: 90%;
     }
-    #minibox>li{
-        font-size: 79%;
-        display: inline;
-        border: 1px solid #222;
-        border-radius: 3px;
-        background-color: #eee;
-        margin: 0 0 0 0;
-    }
-    #minibox>li>a{
-        text-decoration: none;
-        color: black;
-    }
-    #minibox>li>a:hover{
-        background-color: #BBD1E8;
+    #login>input{
+        width: 8em;
     }
 }

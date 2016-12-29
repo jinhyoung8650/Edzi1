@@ -18,10 +18,10 @@ var remocon =function(){
     
     
     remoconImg  = frame.addSprite(container,"remoconImg",{width: 44, height:                                                36,x:3.5,y:0});
-    top_ButtonImg  = frame.addSprite(container,"top_ButtonImg",{width: 17, height:                                          27,x:8.5,y:76.8});
-    btm_ButtonImg  = frame.addSprite(container,"btm_ButtonImg",{width: 17, height:                                          27,x:38.5,y:76.8});
-    currentNumber = frame.addSprite(container,"currentNumber",                                                              {width:20,height:40,x:10,y:34});
-    allNumber  = frame.addSprite(container,"allNumber",{width: 20, height:                                                  40,x:37.5,y:34});
+    top_ButtonImg  = frame.addSprite(container,"top_ButtonImg",{width: 20, height:                                          27,x:5.5,y:76.8});
+    btm_ButtonImg  = frame.addSprite(container,"btm_ButtonImg",{width: 20, height:                                          27,x:35.5,y:76.8});
+    currentNumber = frame.addSprite(container,"currentNumber",                                                              {width:20,height:40,x:8.1,y:34});
+    allNumber  = frame.addSprite(container,"allNumber",{width: 20, height:                                                  40,x:35.5,y:34});
    
     frame.setAnimation(remoconImg ,remocon);
     frame.setAnimation(top_ButtonImg ,top_Button);

@@ -8,79 +8,136 @@
     <script type="text/javascript" src="js/Framework.js"></script>
     <script type="text/javascript" src="js/remote.js"></script>	
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/TheEdgeheader.css" rel="stylesheet">
-    <link href="css/TheEdge.css" rel="stylesheet">
-    <link href="css/ThirdPage.css" rel="stylesheet">
+    <link href="css/Header.css" rel="stylesheet">
+    <link href="css/TheEdzi.css" rel="stylesheet">
+    <link href="css/ThirdPart.css" rel="stylesheet">
     
-</head>
-<body>
+   
+<!-- ***************헤더 부분**************** -->
+  <body> 
     <header>
-       <div id="fbar">
-           <ul id="minibox">
-               <li id="loginbox"><a href="#">로그인</a></li>
-               <li id="memberbox"><a href="#">회원가입</a></li>
-           </ul>
-       </div>
+        <div id="fbar">
+            <form id="login">
+                아이디 <input type="text" id="memid"> /
+                비밀번호 <input type="password" id="mempwd">
+                <button id="loginbtn">로그인</button>
+                <button id="membtn">회원가입</button>
+            </form>
+        </div>
         <div id="logobar">
             <a id="logo" href="#">The Edzi</a>
             <div id="monotext">더 엣지하게, 엣지있는 프리미엄 의류 대여 샵</div>
         </div>
     </header>
+    
+<!-- ***************리모콘 부분**************** -->
+    
     <div id="remote"></div>
     
+<!-- ***************1번째 부분**************** -->
+    
     <section id="sec1" class="sec">
-        <div class="fwin" id="cuca"></div>
+        <div class="fwin" id="cuca">
+            <div id="logotitle">
+                <hr>
+                <h1>L O G O</h1>
+            </div>
+            <div id="imglogo">
+                <img id="imgcuca" src="img/cuca1.png" alt="Choice us&Choice all">
+            </div>
+        </div>
         <div class="fwin" id="belief">
-            <h1 id="headline">설립 이념</h1>
+            <div id="beliefbox">
+                <hr>
+                <h1 id="headline">설립 이념</h1>
+            </div>
             <hr>
-            <p id="parag"> 모두의 옷장이 되겠다는 모토로...</p>
+            <div>
+                <ul><h3>설립 배경</h3>
+                    <li>우리 The Edzi가 설립된 배경은 간단합니다. 옷은 우리의 삶에서 빼놓을 수 없는 것이기 때문이죠.</li>
+                    <li>우리는 항상 옷을 걸쳐야하고 또 옷을 선택해야 합니다. 물론, 어제와는 다르게요.</li>
+                    <li>선택이 곤란할 때가 있을 수도 있죠. 옷의 수도 제한적이구요. 사놓고 며칠 입고 옷장에</li>
+                    <li>쑤셔박아 놓는 일은 다반사죠. 유행만을 쫓기엔 주머니가 너무 가볍습니다.</li>
+                    <li>세상에는 다양한 종류의 옷이 존재하는만큼 모든 것을 소유하기엔 무리가 있습니다.</li>
+                    <li>그렇기에 우리 The Edzi가 여러분의 고민을 해결하고 선택지를 늘려주고자 태어나게 되었습니다.</li>
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <ul><h3>설립 목적</h3>
+                    <li>개성을 당연시 여기고 존중받는 사회, 그 개성을 더 발전시켜주기 위해</li>
+                    <li>모두가 이용할 수 있는 세계에서 가장 큰 옷장을 만들기 위해</li>
+                    <li>당장 오늘 무엇을 입을지 고민을 덜어주기 위해</li>
+                    <li>일정 횟수 이상을 대여한 옷은 기부를 통한 사회에 환원</li>
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <ul><h3>이럴 때 찾아오세요</h3>
+                    <li>옷장은 꽉 찼지만 입을 옷이 없을 때</li>
+                    <li>색다른 옷을 입어보고 싶을 때</li>
+                    <li>코디는 맞췄는데 옷을 사러 갈 시간이 없을 때</li>
+                </ul>
+            </div>
+            <hr>
         </div>
     </section>
+    
+<!-- ***************2번째 부분**************** -->
+   
     <section id="sec2" class="sec">
-       <div id="menu">
-           <ul id="topmenu">
-               <li><a href="#" id="clotop">탑</a>
-                   <ul class="smallmenu">
-                       <li><a href="#">라운드넥</a></li>
-                       <li><a href="#">브이넥</a></li>
-                       <li><a href="#">나시</a></li>
-                       <li><a href="#">폴라/터틀넥</a></li>
-                       <li><a href="#">니트티</a></li>
-                   </ul>
-               </li>
-               <li><a href="#" id="blouse">블라우스</a>
-                   <ul class="smallmenu">
-                       <li><a href="#">블라우스</a></li>
-                       <li><a href="#">셔츠</a></li>
-                   </ul>
-               </li>
-               <li><a href="#" id="neet">니트&가디건</a>
-                   <ul class="smallmenu">
-                       <li><a href="#">니트</a></li>
-                       <li><a href="#">가디건</a></li>
-                       <li><a href="#">조끼</a></li>
-                   </ul>
-               </li>
-               <li><a href="#" id="pants">팬츠</a>
-                   <ul class="smallmenu">
-                       <li><a href="#">스키니</a></li>
-                       <li><a href="#">레깅스</a></li>
-                       <li><a href="#">청바지</a></li>
-                       <li><a href="#">반바지</a></li>
-                   </ul>
-               </li>
-               <li><a href="#" id="onepiece">원피스&스커트</a>
-                   <ul class="smallmenu">
-                       <li><a href="#">원피스</a></li>
-                       <li><a href="#">스커트</a></li>
-                   </ul>
-               </li>
-           </ul>
-       </div>
+        <div id="headname">
+            <hr>
+            <h1>CATEGORY</h1>
+        </div>
+        <div id="leftbtn" class="btns"><a href="#"><img src="img/left1.png" alt="왼쪽 버튼"></a></div>
+        <div id="rightbtn" class="btns"><a href="#"><img src="img/right1.png" alt="오른쪽 버튼"></a></div>
+        <div id="menu">
+            <hr>
+            <ul id="topmenu">
+                <li><a href="#" id="clotop">탑</a>
+                    <ul class="smallmenu">
+                        <li><a href="#">라운드넥</a></li>
+                        <li><a href="#">브이넥</a></li>
+                        <li><a href="#">나시</a></li>
+                        <li><a href="#">폴라/터틀넥</a></li>
+                        <li><a href="#">니트티</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="blouse">블라우스</a>
+                    <ul class="smallmenu">
+                        <li><a href="#">블라우스</a></li>
+                        <li><a href="#">셔츠</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="neet">니트&가디건</a>
+                    <ul class="smallmenu">
+                        <li><a href="#">니트</a></li>
+                        <li><a href="#">가디건</a></li>
+                        <li><a href="#">조끼</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="pants">팬츠</a>
+                    <ul class="smallmenu">
+                        <li><a href="#">스키니</a></li>
+                        <li><a href="#">레깅스</a></li>
+                        <li><a href="#">청바지</a></li>
+                        <li><a href="#">반바지</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="onepiece">원피스</a>
+                    <ul class="smallmenu">
+                        <li><a href="#">원피스</a></li>
+                        <li><a href="#">스커트</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <hr>
+        </div>
         <div id="imgcal">
             <ul id="calcap">
                 <li id="cal1" class="cals"><img src="img/cal2.jpg" alt="탑"></li>
-                <li id="cal2" class="cals"><img src="img/cal.jpg" alt="블라우스"></li>
+                <li id="cal2" class="cals"><img src="img/cal1.jpg" alt="블라우스"></li>
                 <li id="cal3" class="cals"><img src="img/cal3.jpg" alt="니트&가디건"></li>
                 <li id="cal4" class="cals"><img src="img/cal4.jpg" alt="팬츠"></li>
                 <li id="cal5" class="cals"><img src="img/cal5.jpg" alt="원피스&스커트"></li>
@@ -94,88 +151,88 @@
             <div class="dots" id="dot5"></div>
         </div>
     </section>
-  
-        
-      <section id="sec3" class="sec">
-       <section class="product_section">
-        <h2 class="product_title">인기상품</h2>
-         <article>
-          <ul>
-
-           <li class="product_li">
-            <div class="product_div"> 
-             <figure class="product_figure">
-              <a href="#"><img src="img/coat1.png" alt="a"></a>
-              <figcaption><a href="#">60%할인</a></figcaption>
-             </figure>
-              <a class="tap_text" href="#">60%할인</a>
-            </div>
-           </li>
-
-           <li class="product_li">
-            <div class="product_div">
-             <figure class="product_figure">
-              <a href="#"><img src="img/coat2.png" alt="a"></a>
-              <figcaption><a href="#">60%할인</a></figcaption>
-             </figure>
-              <a class="tap_text" href="#">60%할인</a>
-            </div>
-           </li>
-
-           <li class="product_li">
-            <div class="product_div">
-             <figure class="product_figure">
-              <a href="#"><img src="img/coat3.png" alt="a"></a>
-              <figcaption><a href="#">60%할인</a></figcaption>
-             </figure>
-              <a class="tap_text" href="#">60%할인</a>
-            </div>
-           </li>
-
-          </ul>  
-         </article>
+    
+<!-- ***************3번째 부분**************** -->
+    
+    <section id="sec3" class="sec">
+        <section class="product_section">
+            <hr>
+            <h1 class="product_title">HOT ITEM</h1>
+            <article>
+                <ul>
+                    <li class="product_li">
+                        <div class="product_div">
+                            <figure class="product_figure">
+                                <a href="#"><img src="img/coat1.png" alt="a"></a>
+                                <figcaption><a href="#">60% 할인</a></figcaption>
+                            </figure>
+                            <a class="tap_text" href="#">60% 할인</a>
+                        </div>
+                    </li>
+                    
+                    <li class="product_li">
+                        <div class="product_div">
+                            <figure class="product_figure">
+                                <a href="#"><img src="img/coat2.png" alt="a"></a>
+                                <figcaption><a href="#">60% 할인</a></figcaption>
+                            </figure>
+                            <a class="tap_text" href="#">60% 할인</a>
+                        </div>
+                    </li>
+                    
+                    <li class="product_li">
+                        <div class="product_div">
+                            <figure class="product_figure">
+                                <a href="#"><img src="img/coat3.png" alt="a"></a>
+                                <figcaption><a href="#">60% 할인</a></figcaption>
+                            </figure>
+                            <a class="tap_text" href="#">60% 할인</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </article>
         </section>
-
-     <section class="product_section">
-       <h2 class="product_title">신상 상품</h2>
-        <article>
-         <ul>
-
-           <li class="product_li">
-            <div class="product_div">
-             <figure class="product_figure">
-              <a href="#"><img src="img/coat1.png" alt="a"></a>
-              <figcaption><a href="#">60%할인</a></figcaption>
-             </figure>
-              <a class="tap_text" href="#">60%할인</a>
-            </div>
-           </li>
-
-            <li class="product_li">
-             <div class="product_div">
-              <figure class="product_figure">
-               <a href="#"><img src="img/coat1.png" alt="a"></a>
-               <figcaption><a href="#">70%</a>
-               </figcaption>
-               </figure> 
-                <a class="tap_text" href="#">60%할인</a>
-              </div>
-            </li>
-
-           <li class="product_li">
-            <div class="product_div">
-             <figure class="product_figure">
-              <a href="#"><img src="img/coat1.png" alt="a"></a>
-              <figcaption><a href="#">60%</a></figcaption>
-             </figure>
-               <a class="tap_text" href="#">60%할인</a>       
-            </div> 
-           </li>
-
-       </ul>  
-      </article>
-     </section>    
+        
+        <section class="product_section">
+            <hr>
+            <h1 class="product_title">NEW ITEM</h1>
+            <article>
+                <ul>
+                    <li class="product_li">
+                        <div class="product_div">
+                            <figure class="product_figure">
+                                <a href="#"><img src="img/coat1.png" alt="a"></a>
+                                <figcaption><a href="#">60% 할인</a></figcaption>
+                            </figure>
+                            <a class="tap_text" href="#">60% 할인</a>
+                        </div>
+                    </li>
+                    
+                    <li class="product_li">
+                        <div class="product_div">
+                            <figure class="product_figure">
+                                <a href="#"><img src="img/coat2.png" alt="a"></a>
+                                <figcaption><a href="#">60% 할인</a></figcaption>
+                            </figure>
+                            <a class="tap_text" href="#">60% 할인</a>
+                        </div>
+                    </li>
+                    
+                    <li class="product_li">
+                        <div class="product_div">
+                            <figure class="product_figure">
+                                <a href="#"><img src="img/coat3.png" alt="a"></a>
+                                <figcaption><a href="#">60% 할인</a></figcaption>
+                            </figure>
+                            <a class="tap_text" href="#">60% 할인</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </article>
+        </section>
     </section>
-   
+    
 </body>
 </html>
