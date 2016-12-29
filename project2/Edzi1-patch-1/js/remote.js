@@ -1,10 +1,8 @@
 $(document).ready(function(){
   
 var remocon =function(){
-    console.log("aa");
-     $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 3px solid black; top: 120px; left:94.7%'>");
+    $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 3px solid black; border-radius: 20px; top: 120px; left:94.7%'>");
     var  container= $("#container").draggable();
-    
     
     var remocon = new frame.animation({
          url : "img/remocon.png",
@@ -62,19 +60,20 @@ var remocon =function(){
         top_ButtonImg.css({border: '0px',borderRadius: '50%'});
     });
      btm_ButtonImg.on("hover",function(){
-         console.log("aaaaa");
         btm_ButtonImg.css({border: '1px solid rgba(122,252,235,0.8)',borderRadius: '50%'});
     }).on("mouseleave",function(){
         btm_ButtonImg.css({border: '0px',borderRadius: '50%'});
     });
 }
 
-
+/*1024d이상 */
 if (matchMedia("screen and (min-width: 1024px)").matches) {
     remocon();
-}else{
+}
+else{
     
 }
+    /*화면 움직일때 1024이상이*/
      $(window).resize(function() {
         if(this.resizeTO) {
             clearTimeout(this.resizeTO);
@@ -87,13 +86,15 @@ if (matchMedia("screen and (min-width: 1024px)").matches) {
         var contain = $("#container");
       var device_width=$(window).width();
         if(device_width>1025){
-          $("#container").show();
+            if ( $("#container").length > 0 ) {
+                $("#container").show();
+            } else {
+                remocon();
+            }
         }else{
             $("#container").hide();
         }
     });
-
-
      
 });
    
