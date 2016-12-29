@@ -7,16 +7,17 @@
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
    
     <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+    <script type="text/javascript" src="js/Framework.js"></script>
+    <script type="text/javascript" src="js/remote.js"></script>	
+    
     <link href="css/Header.css" rel="stylesheet">
     <link href="css/TheEdzi.css" rel="stylesheet">
     <link href="css/ThirdPart.css" rel="stylesheet">
-   
-  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
-    <script type="text/javascript" src="js/Framework.js"></script>
-    <script type="text/javascript" src="js/remote.js"></script>	
-     
+    <link href="css/custom_bootstrap.css" rel="stylesheet">
      </head>
 <!-- ***************헤더 부분**************** -->
   <body> 
@@ -25,7 +26,7 @@
             <form id="login">
                 아이디 <input type="text" id="memid"> /
                 비밀번호 <input type="password" id="mempwd">
-                <button id="loginbtn">로그인</button>
+                <button id="loginbtn" class="btn btn-primary">로그인</button>
                 <button id="membtn">회원가입</button>
             </form>
         </div>
@@ -42,7 +43,7 @@
 <!-- ***************1번째 부분**************** -->
     
     <section id="sec1" class="sec">
-        <div class="fwin" id="cuca">
+        <div class="fwin " id="cuca">
             <div id="logotitle">
                 <hr>
                 <h1>L O G O</h1>
@@ -141,7 +142,7 @@
         </div>
         <div id="imgcal">
             <ul id="calcap">
-                <li id="cal1" class="cals"><img src="img/cal2.jpg" alt="탑"></li>
+                <li id="cal1" class="cals img-thumbnail"><img src="img/cal2.jpg" alt="탑"></li>
                 <li id="cal2" class="cals"><img src="img/cal1.jpg" alt="블라우스"></li>
                 <li id="cal3" class="cals"><img src="img/cal3.jpg" alt="니트&가디건"></li>
                 <li id="cal4" class="cals"><img src="img/cal4.jpg" alt="팬츠"></li>
@@ -238,6 +239,59 @@
             </article>
         </section>
     </section>
-    
+<!-- ***************4번째 부분**************** -->
+<!-- 최상위 div에 class bts로 지정하면 그 범위만 bootstrap 사용 -->
+<section id="sec4" class =" sec">
+   <div class="bts  container">
+    <table class=" table table-hover">
+       <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>122</td>
+                <td>테스트1</td>
+                <td>2016.12.29</td>
+                <td>122</td>
+                <td>122</td>
+            </tr>
+            
+            <tr>
+                <td>122</td>
+                <td>테스트2</td>
+                <td>2016.12.29</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+             
+            <tr>
+                <td>122</td>
+                <td>테스트3</td>
+                <td>2016.12.29</td>
+                <td>124</td>
+                <td>124</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+ <a class="btn btn-default pull-right">글쓰기</a>   
+    <div class=" text-center">
+        <ul class=" pagination">
+          <li><a href="#">1</a></li>    
+          <li><a href="#">2</a></li>    
+          <li><a href="#">3</a></li>    
+          <li><a href="#">4</a></li>    
+          <li><a href="#">5</a></li>    
+
+        </ul>
+    </div>
+   </div>
+</section>
 </body>
 </html>
