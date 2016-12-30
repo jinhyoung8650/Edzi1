@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>AJAX</title>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
 <script>
 function ajax_send(sel){
         $.ajax({/**/
@@ -36,7 +36,7 @@ function ajax_send(sel){
 <h1>로그인</h1>
 <div id="login">
 
-<form action="php/login.php"  name="form_ajax" method="post" onSubmit="return ajax_send(this)"><!-- submit눌렀을때 onSubmit return 으로 ajax함수 호출해 -->
+<form action="php/login.php" id="a" name="form_ajax" method="post" onSubmit="return ajax_send(this)"><!-- submit눌렀을때 onSubmit return 으로 ajax함수 호출해 -->
     <input type="hidden" name="ACCESS" value="true">
     <input type="text" name="id" value="" placeholder="아이디를 입력해 주세요">
     <input type="password" name="pw" value="" placeholder="비밀번호를 입력해 주세요">

@@ -13,7 +13,7 @@
   
     <script type="text/javascript" src="js/Framework.js"></script>
     <script type="text/javascript" src="js/remote.js"></script>	
-
+    <script type="text/javascript" src="js/login.js"></script>
   
     
     <link href="css/Header.css" rel="stylesheet">
@@ -25,10 +25,10 @@
   <body> 
     <header>
         <div id="fbar">
-            <form id="login" action="ajax.php" name="form_ajax" method="post"onSubmit="return">
+            <form id="login" action="json/login.json" name="form_ajax" method="post">
                 아이디   <input type="text" id="memid" name="id" value="">
                 /
-                비밀번호 <input type="password" id="pw">
+                비밀번호 <input type="password" id="pw" name="pw">
                 <button id="loginbtn" class="btn btn-primary">로그인</button>
                 <button id="membtn">회원가입</button>
             </form>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Edzi, 더 엣지있게, 프리미엄 의류 대여 샵</title>
+    <script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+    $(document).ready(function(){
+        $('#execute').click(function(){
+        $.ajax({
+            url:'time.php',
+            dataTyPe:"json",
+            type:'post',
+            data:$("form").serialize(),
+            success:function(data){
+                console.log("aaa");
+                if(data['result']=='f'){ 
+                   alert(data['msg']); 
+                }else if(data['result']=='success'){ /* 로그인 성공시*/
+                        alert(data['msg']); 
+                        $('#login').html(data['id']+'님 환영합니다.');
+                }
+            }
+        })
+        return false;
+    });
+  
+    });
+</script>
+    </head>
+    <body>
+       <p>time : <span id="time"></span></p>
+ 
+   <form action="time.php"  name="form_ajax" method="post" onSubmit="return ajax_send(this)"><!-- submit눌렀을때 onSubmit return 으로 ajax함수 호출해 -->
+    <input type="hidden" name="ACCESS" value="true">
+    <input type="text" name="id" value="" placeholder="아이디를 입력해 주세요">
+    <input type="password" name="pw" value="" placeholder="비밀번호를 입력해 주세요">
+    <input type="button" id="btn1" value="로그인">
+    <input type="button" id="execute" value="execute" />
+    </form>
+    </body>
+</html>
