@@ -13,6 +13,8 @@
   
     <script type="text/javascript" src="js/Framework.js"></script>
     <script type="text/javascript" src="js/remote.js"></script>	
+
+  
     
     <link href="css/Header.css" rel="stylesheet">
     <link href="css/TheEdzi.css" rel="stylesheet">
@@ -23,12 +25,15 @@
   <body> 
     <header>
         <div id="fbar">
-            <form id="login">
-                아이디 <input type="text" id="memid"> /
-                비밀번호 <input type="password" id="mempwd">
+            <form id="login" action="ajax.php" name="form_ajax" method="post"onSubmit="return">
+                아이디   <input type="text" id="memid" name="id" value="">
+                /
+                비밀번호 <input type="password" id="pw">
                 <button id="loginbtn" class="btn btn-primary">로그인</button>
                 <button id="membtn">회원가입</button>
             </form>
+            
+            
         </div>
         <div id="logobar">
             <a id="logo" href="#">The Edzi</a>
