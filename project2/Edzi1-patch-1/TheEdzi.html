@@ -5,50 +5,46 @@
     <title>The Edzi, 더 엣지있게, 프리미엄 의류 대여 샵</title>
     <script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  
-    <script type="text/javascript" src="js/Framework.js"></script>
-    <script type="text/javascript" src="js/remote.js"></script>	
-    <script type="text/javascript" src="js/login.js"></script>
-  
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/custom_bootstrap.css" rel="stylesheet">   
     <link href="css/Header.css" rel="stylesheet">
     <link href="css/TheEdzi.css" rel="stylesheet">
     <link href="css/ThirdPart.css" rel="stylesheet">
-    <link href="css/custom_bootstrap.css" rel="stylesheet">
-     </head>
-<!-- ***************헤더 부분**************** -->
-  <body> 
+    <script type="text/javascript" src="js/Framework.js"></script>
+    <script type="text/javascript" src="js/remote.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/Edzi.js"></script>
+</head>
+<body>
+   
+<!-- ***************헤더 부분*************** -->
+   
     <header>
-        <div id="fbar">
-            <form id="login" action="json/login.json" name="form_ajax" method="post">
-                아이디   <input type="text" id="memid" name="id" value="">
-                /
-                비밀번호 <input type="password" id="pw" name="pw">
-                <button id="loginbtn" class="btn btn-primary">로그인</button>
+       <div id="fbar">
+            <form action="ajax/login.php"id="loginForm"name="form_ajax"method="post"
+                  onsubmit="return loginform(this)">
+                <input type="hidden" name="ACCESS" value="true">아이디
+                <input type="text" id="id" name="id" value="">/비밀번호 
+                <input type="password" id="pw" name="pw">
+                <input type="submit" value="로그인">
                 <button id="membtn">회원가입</button>
             </form>
-            
-            
         </div>
         <div id="logobar">
             <a id="logo" href="#">The Edzi</a>
-            <div id="monotext">더 엣지하게, 엣지있는 프리미엄 의류 대여 샵</div>
+            <div id="monotext">본 페이지는 포트폴리오용으로 제작한 사이트입니다</div>
         </div>
     </header>
     
-<!-- ***************리모콘 부분**************** -->
+<!-- ***************리모콘 부분*************** -->
     
-    <div id="remote"></div>
+<!-- 여기 리모콘 div 넣으면 안되 --> 
     
-<!-- ***************1번째 부분**************** -->
+<!-- ***************1번째 부분*************** -->
     
     <section id="sec1" class="sec">
-        <div class="fwin " id="cuca">
+        <div class="fwin" id="cuca">
             <div id="logotitle">
                 <hr>
                 <h1>L O G O</h1>
@@ -62,52 +58,69 @@
                 <hr>
                 <h1 id="headline">설립 이념</h1>
             </div>
-            <hr>
-            <div>
-                <ul><h3>설립 배경</h3>
-                    <li>우리 The Edzi가 설립된 배경은 간단합니다. 옷은 우리의 삶에서 빼놓을 수 없는 것이기 때문이죠.</li>
-                    <li>우리는 항상 옷을 걸쳐야하고 또 옷을 선택해야 합니다. 물론, 어제와는 다르게요.</li>
-                    <li>선택이 곤란할 때가 있을 수도 있죠. 옷의 수도 제한적이구요. 사놓고 며칠 입고 옷장에</li>
-                    <li>쑤셔박아 놓는 일은 다반사죠. 유행만을 쫓기엔 주머니가 너무 가볍습니다.</li>
-                    <li>세상에는 다양한 종류의 옷이 존재하는만큼 모든 것을 소유하기엔 무리가 있습니다.</li>
-                    <li>그렇기에 우리 The Edzi가 여러분의 고민을 해결하고 선택지를 늘려주고자 태어나게 되었습니다.</li>
-                </ul>
+            <div id="mind" class="things">
+                <span>
+                    <h3>설립 배경</h3>
+                    <hr>
+                </span>
+                <p id="mind_in">
+                    우리 The Edzi가 설립된 배경은 간단합니다. 옷은 우리 삶에서 빼놓을 수 없기 때문이죠. 옷이 몸을 가리는
+                    기능만을 위한 시대는 지났습니다. 우리는 옷을 입는 데 신중합니다. 물론, 어제와는 다르게요. 하지만 선택이
+                    곤란할 때가 있습니다. 가지고 있는 옷의 수도 제한적이죠. 시즌별로 유행별로 옷은 계속해서 나오고 바뀝니다.
+                    그 모든 걸 쫓아서 구매하기에는 지갑이 곤란해하죠. 모든 것을 소유하기엔 무리가 있습니다. 그러니까 우리
+                    The Edzi를 이용하세요. 만족을 약속합니다.
+                </p>
             </div>
-            <hr>
-            <div>
-                <ul><h3>설립 목적</h3>
+            <div id="purpose" class="things">
+                <span>
+                    <h3>설립 목적</h3>
+                    <hr>
+                </span>
+                <ul id="purpose_in">
                     <li>개성을 당연시 여기고 존중받는 사회, 그 개성을 더 발전시켜주기 위해</li>
-                    <li>모두가 이용할 수 있는 세계에서 가장 큰 옷장을 만들기 위해</li>
-                    <li>당장 오늘 무엇을 입을지 고민을 덜어주기 위해</li>
-                    <li>일정 횟수 이상을 대여한 옷은 기부를 통한 사회에 환원</li>
+                    <li>모두가 이용할 수 있는 세계에서 가장 큰 옷장이 되기 위해</li>
+                    <li>금액에 대한 부담을 줄이고 선택의 폭을 넓혀주기 위해</li>
+                    <li>당장 오늘 무엇을 입을지에 대한 고민을 덜어주기 위해</li>
+                    <li>일정 횟수 이상을 대여한 옷은 기부를 통한 사회에 환원을 위해</li>
                 </ul>
             </div>
-            <hr>
-            <div>
-                <ul><h3>이럴 때 찾아오세요</h3>
+            <div id="case" class="things">
+                <span>
+                    <h3>이럴 때 찾아오세요</h3>
+                    <hr>
+                </span>
+                <ul id="case_in">
                     <li>옷장은 꽉 찼지만 입을 옷이 없을 때</li>
                     <li>색다른 옷을 입어보고 싶을 때</li>
                     <li>코디는 맞췄는데 옷을 사러 갈 시간이 없을 때</li>
+                    <li>실제로 이 옷이 나한테 잘 어울릴지 입어보고 싶을 때</li>
                 </ul>
             </div>
-            <hr>
+            <div class="imgs">
+                <img src="img/logo2.png" id="imglogo1" alt="로고 이미지">
+            </div>
+            <div class="imgs">
+                <img src="img/using.png" id="using1" alt="이미지">
+            </div>
         </div>
     </section>
     
-<!-- ***************2번째 부분**************** -->
+<!-- ***************2번째 부분*************** -->
    
     <section id="sec2" class="sec">
         <div id="headname">
             <hr>
             <h1>CATEGORY</h1>
         </div>
-        <div id="leftbtn" class="btns"><a href="#"><img src="img/left1.png" alt="왼쪽 버튼"></a></div>
-        <div id="rightbtn" class="btns"><a href="#"><img src="img/right1.png" alt="오른쪽 버튼"></a></div>
+        <div id="leftbtn" class="btns"><a><img src="img/line_left1.png" alt="왼쪽 버튼"></a></div>
+        <div id="leftbtnred" class="btns"><a><img src="img/line_left_red1.png" alt="왼쪽 버튼"></a></div>
+        <div id="rightbtn" class="btns"><a><img src="img/line_right1.png" alt="오른쪽 버튼"></a></div>
+        <div id="rightbtnred" class="btns"><a><img src="img/line_right_red1.png" alt="오른쪽 버튼"></a></div>
         <div id="menu">
             <hr>
             <ul id="topmenu">
-                <li><a href="#" id="clotop">탑</a>
-                    <ul class="smallmenu">
+                <li id="tm1"><a href="#">탑</a>
+                    <ul class="smallmenu" id="sm1">
                         <li><a href="#">라운드넥</a></li>
                         <li><a href="#">브이넥</a></li>
                         <li><a href="#">나시</a></li>
@@ -115,29 +128,29 @@
                         <li><a href="#">니트티</a></li>
                     </ul>
                 </li>
-                <li><a href="#" id="blouse">블라우스</a>
-                    <ul class="smallmenu">
+                <li id="tm2"><a href="#">블라우스</a>
+                    <ul class="smallmenu" id="sm2">
                         <li><a href="#">블라우스</a></li>
                         <li><a href="#">셔츠</a></li>
                     </ul>
                 </li>
-                <li><a href="#" id="neet">니트&가디건</a>
-                    <ul class="smallmenu">
+                <li id="tm3"><a href="#">니트&가디건</a>
+                    <ul class="smallmenu" id="sm3">
                         <li><a href="#">니트</a></li>
                         <li><a href="#">가디건</a></li>
                         <li><a href="#">조끼</a></li>
                     </ul>
                 </li>
-                <li><a href="#" id="pants">팬츠</a>
-                    <ul class="smallmenu">
+                <li id="tm4"><a href="#">팬츠</a>
+                    <ul class="smallmenu" id="sm4">
                         <li><a href="#">스키니</a></li>
                         <li><a href="#">레깅스</a></li>
                         <li><a href="#">청바지</a></li>
                         <li><a href="#">반바지</a></li>
                     </ul>
                 </li>
-                <li><a href="#" id="onepiece">원피스</a>
-                    <ul class="smallmenu">
+                <li id="tm5"><a href="#">원피스</a>
+                    <ul class="smallmenu" id="sm5">
                         <li><a href="#">원피스</a></li>
                         <li><a href="#">스커트</a></li>
                     </ul>
@@ -147,11 +160,11 @@
         </div>
         <div id="imgcal">
             <ul id="calcap">
-                <li id="cal1" class="cals img-thumbnail"><img src="img/cal2.jpg" alt="탑"></li>
-                <li id="cal2" class="cals"><img src="img/cal1.jpg" alt="블라우스"></li>
-                <li id="cal3" class="cals"><img src="img/cal3.jpg" alt="니트&가디건"></li>
-                <li id="cal4" class="cals"><img src="img/cal4.jpg" alt="팬츠"></li>
-                <li id="cal5" class="cals"><img src="img/cal5.jpg" alt="원피스&스커트"></li>
+                <li id="cal1" class="cals"><img src="img/cal1.jpg" alt="이미지1" class="calimgs"></li>
+                <li id="cal2" class="cals"><img src="img/cal2.jpg" alt="이미지2" class="calimgs"></li>
+                <li id="cal3" class="cals"><img src="img/cal3.jpg" alt="이미지3" class="calimgs"></li>
+                <li id="cal4" class="cals"><img src="img/cal4.jpg" alt="이미지4" class="calimgs"></li>
+                <li id="cal5" class="cals"><img src="img/cal5.jpg" alt="이미지5" class="calimgs"></li>
             </ul>
         </div>
         <div id="dotm">
@@ -163,41 +176,62 @@
         </div>
     </section>
     
-<!-- ***************3번째 부분**************** -->
+<!-- ***************3번째 부분*************** -->
     
     <section id="sec3" class="sec">
-        <section class="product_section">
+        <span id="big_title">
             <hr>
-            <h1 class="product_title">HOT ITEM</h1>
+            <h1>HOT ITEM</h1>
+        </span>
+        <section id="pro_sec1" class="product_section">
+            <span class="product_title">
+                <hr>
+                <h2>WOMEN'S BEST</h2>
+            </span>
             <article>
                 <ul>
                     <li class="product_li">
                         <div class="product_div">
                             <figure class="product_figure">
-                                <a href="#"><img src="img/coat1.png" alt="a"></a>
-                                <figcaption><a href="#">60% 할인</a></figcaption>
+                                <a href="#">
+                                    <img src="img/w_clothes1.jpg" alt="a">
+                                    <span>마쥬 더블 울코트</span><br>
+                                    <span>소비자 가격 : </span><span class="tags">68500원</span><br>
+                                    <span>판매 가격 : 47900원</span>
+                                </a>
+                                <figcaption><a href="#">30% 할인</a></figcaption>
                             </figure>
-                            <a class="tap_text" href="#">60% 할인</a>
+                            <a class="tap_text" href="#">30% 할인</a>
                         </div>
                     </li>
                     
                     <li class="product_li">
                         <div class="product_div">
                             <figure class="product_figure">
-                                <a href="#"><img src="img/coat2.png" alt="a"></a>
-                                <figcaption><a href="#">60% 할인</a></figcaption>
+                                <a href="#">
+                                    <img src="img/w_clothes2.jpg" alt="a">
+                                    <span>코엘 일자 정장 팬츠</span><br>
+                                    <span>소비자 가격 : </span><span class="tags">54000원</span><br>
+                                    <span>판매 가격 : 37800원</span>
+                                </a>
+                                <figcaption><a href="#">30% 할인</a></figcaption>
                             </figure>
-                            <a class="tap_text" href="#">60% 할인</a>
+                            <a class="tap_text" href="#">30% 할인</a>
                         </div>
                     </li>
                     
                     <li class="product_li">
                         <div class="product_div">
                             <figure class="product_figure">
-                                <a href="#"><img src="img/coat3.png" alt="a"></a>
-                                <figcaption><a href="#">60% 할인</a></figcaption>
+                                <a href="#">
+                                    <img src="img/w_clothes3.jpg" alt="a">
+                                    <span>테디 반폴라 니트 조끼</span><br>
+                                    <span>소비자 가격 : </span><span class="tags">34500원</span><br>
+                                    <span>판매 가격 : 27600원</span>
+                                </a>
+                                <figcaption><a href="#">20% 할인</a></figcaption>
                             </figure>
-                            <a class="tap_text" href="#">60% 할인</a>
+                            <a class="tap_text" href="#">20% 할인</a>
                         </div>
                     </li>
                     
@@ -205,38 +239,55 @@
             </article>
         </section>
         
-        <section class="product_section">
-            <hr>
-            <h1 class="product_title">NEW ITEM</h1>
+        <section id="pro_sec2" class="product_section">
+            <span class="product_title">
+                <hr>
+                <h2>MEN'S BEST</h2>
+            </span>
             <article>
                 <ul>
                     <li class="product_li">
                         <div class="product_div">
                             <figure class="product_figure">
-                                <a href="#"><img src="img/coat1.png" alt="a"></a>
-                                <figcaption><a href="#">60% 할인</a></figcaption>
+                                <a href="#">
+                                    <img src="img/m_clothes1.jpg" alt="a">
+                                    <span>에리슬 오버핏 폴라니트</span><br>
+                                    <span>소비자 가격 : </span><span class="tags">37900원</span><br>
+                                    <span>판매 가격 : 28400원</span>
+                                </a>
+                                <figcaption><a href="#">25% 할인</a></figcaption>
                             </figure>
-                            <a class="tap_text" href="#">60% 할인</a>
+                            <a class="tap_text" href="#">25% 할인</a>
                         </div>
                     </li>
                     
                     <li class="product_li">
                         <div class="product_div">
                             <figure class="product_figure">
-                                <a href="#"><img src="img/coat2.png" alt="a"></a>
-                                <figcaption><a href="#">60% 할인</a></figcaption>
+                                <a href="#">
+                                    <img src="img/m_clothes3.jpg" alt="a">
+                                    <span>슬로우 생지 데님팬츠</span><br>
+                                    <span>소비자 가격 : </span><span class="tags">25900원</span><br>
+                                    <span>판매 가격 : 18000원</span>
+                                </a>
+                                <figcaption><a href="#">30% 할인</a></figcaption>
                             </figure>
-                            <a class="tap_text" href="#">60% 할인</a>
+                            <a class="tap_text" href="#">30% 할인</a>
                         </div>
                     </li>
                     
                     <li class="product_li">
                         <div class="product_div">
                             <figure class="product_figure">
-                                <a href="#"><img src="img/coat3.png" alt="a"></a>
-                                <figcaption><a href="#">60% 할인</a></figcaption>
+                                <a href="#">
+                                    <img src="img/m_clothes2.jpg" alt="a">
+                                    <span>센즈빈 골덴 양털자켓</span><br>
+                                    <span>소비자 가격 : </span><span class="tags">39000원</span><br>
+                                    <span>판매 가격 : 31200원</span>
+                                </a>
+                                <figcaption><a href="#">20% 할인</a></figcaption>
                             </figure>
-                            <a class="tap_text" href="#">60% 할인</a>
+                            <a class="tap_text" href="#">20% 할인</a>
                         </div>
                     </li>
                     
@@ -244,59 +295,75 @@
             </article>
         </section>
     </section>
-<!-- ***************4번째 부분**************** -->
-<!-- 최상위 div에 class bts로 지정하면 그 범위만 bootstrap 사용 -->
-<section id="sec4" class =" sec">
-   <div class="bts  container">
-    <table class=" table table-hover">
-       <thead>
-        <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>날짜</th>
-            <th>조회수</th>
-        </tr>
-        </thead>
-        <tbody>
+    <!-- ***************4번째 부분**************** -->
+    <!-- 최상위 div에 class bts로 지정하면 그 범위만 bootstrap 사용 -->
+    <section id="sec4" class =" sec">
+       <div class="bts  container">
+        <table class=" table table-hover">
+           <thead>
             <tr>
-                <td>122</td>
-                <td>테스트1</td>
-                <td>2016.12.29</td>
-                <td>122</td>
-                <td>122</td>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>조회수</th>
             </tr>
-            
-            <tr>
-                <td>122</td>
-                <td>테스트2</td>
-                <td>2016.12.29</td>
-                <td>123</td>
-                <td>123</td>
-            </tr>
-             
-            <tr>
-                <td>122</td>
-                <td>테스트3</td>
-                <td>2016.12.29</td>
-                <td>124</td>
-                <td>124</td>
-            </tr>
-        </tbody>
-    </table>
-    <hr/>
- <a class="btn btn-default pull-right">글쓰기</a>   
-    <div class=" text-center">
-        <ul class=" pagination">
-          <li><a href="#">1</a></li>    
-          <li><a href="#">2</a></li>    
-          <li><a href="#">3</a></li>    
-          <li><a href="#">4</a></li>    
-          <li><a href="#">5</a></li>    
+            </thead>
+            <tbody>
+                <tr>
+                    <td>122</td>
+                    <td>테스트1</td>
+                    <td>2016.12.29</td>
+                    <td>122</td>
+                    <td>122</td>
+                </tr>
 
-        </ul>
-    </div>
-   </div>
-</section>
+                <tr>
+                    <td>122</td>
+                    <td>테스트2</td>
+                    <td>2016.12.29</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+
+                <tr>
+                    <td>122</td>
+                    <td>테스트3</td>
+                    <td>2016.12.29</td>
+                    <td>124</td>
+                    <td>124</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr/>
+     <a class="btn btn-default pull-right">글쓰기</a>   
+        <div class=" text-center">
+            <ul class=" pagination">
+              <li><a href="#">1</a></li>    
+              <li><a href="#">2</a></li>    
+              <li><a href="#">3</a></li>    
+              <li><a href="#">4</a></li>    
+              <li><a href="#">5</a></li>    
+
+            </ul>
+        </div>
+       </div>
+    </section>
+    
+<!-- ***************풋터 부분*************** -->
+    
+    <footer>
+        <span>
+            <hr>
+            <h1>INFORMATION</h1>
+        </span>
+        <address>
+            본 페이지는 포트폴리오용으로 제작된 페이지입니다.<br>
+            제작자 e-mail<br>
+            김진형 : dmdnt11@naver.com<br>
+            송근도 : rmseh9900@naver.com
+        </address>
+    </footer>
+    
 </body>
 </html>

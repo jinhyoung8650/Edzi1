@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
   
 var remocon =function(){
     $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 3px solid black; border-radius: 20px; top: 120px; left:94.7%'>");
@@ -98,3 +98,4 @@ else{
      
 
    
+});

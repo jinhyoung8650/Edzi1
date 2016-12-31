@@ -1,24 +1,22 @@
-$(document).ready(function(){
-  $('#loginbtn').click(function(){
+ function loginform(info){
     $.ajax({
-            url:'json/login.json', 
+            url:$(info).attr("action"), 
             dataTyPe:"json", 
-            type:'post',
-            data:$("form").serialize(),
+            type:$(info).attr('method'),
+            data:$(info).serialize(),
             success:function(data){
              
-            if((data['id']==$("#memid").val())){
-                console.log((data['id']==$("#memid").val()));
-                $("#login").html(data['id']+"님 환영합니다");
-            }
             if(data['result']=='f'){ 
                       console.log("saa");
                    alert(data['msg']); 
                 
                 }else if(data['result']=='success'){ /* 로그인 성공시*/
-                    console.log("aa");
-                        alert(data['msg']);
-                        $('#login').html(data['id']+'님 환영합니다');
+                       
+                 
+                        $("#loginForm").detach();
+                        $('#fbar').append("<div id='loginState' style='width:30px; height:20px; display: inline-block;'>"+data['id']+'님'+"</div>");
+                        $('#fbar').append("<button id='logout'>로그아웃</button>");
+                        
                 }
              },error: function(xhr, status, error){
                     var error_confirm=confirm('데이터 전송 오류입니다. 확인을 누르시면 페이지가 새로고침됩니다.');
@@ -29,6 +27,19 @@ $(document).ready(function(){
                 }   
         })     
         return false;
-    });
-    
-    });
+
+    }  
+
+
+
+$(document).ready(function(){
+    var loginForm_clone= $("#loginForm").clone();
+       $(document).on("click","#logout",function(){
+            $("#logout").detach();
+            $("#loginState").detach();
+            $("#fbar").append(loginForm_clone);
+        });
+  });
+       
+  
+ 

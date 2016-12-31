@@ -4,8 +4,8 @@
 }
 html{
     width: 100%;
-    height: 2800px;
-    overflow-x: hidden;
+/*    height: 2850px;*/
+/*    overflow-x: hidden;*/
 }
 body{
     width: 100%;
@@ -14,9 +14,25 @@ body{
 }
 .sec{
     width: 99.9%;
-/*    border: 1px solid silver;*/
 }
-
+h1{
+    font-size: 2em;
+}
+footer{
+    padding-bottom: 1em;
+    padding-top: 1em;    
+    background-color: #eee;
+}
+footer>span{
+    display: inline-block;
+    margin-left: 10%;
+}
+footer>span>hr{
+    border-color: black;
+}
+footer>address{
+    margin-left: 17%;
+}
 /*--------------------sec1----------------------*/
 
 #logotitle{
@@ -28,7 +44,7 @@ body{
     color: white;
 }
 #logotilte>hr{
-    border-color: white;
+    background-color: white;
 }
 #imglogo>img{
     position: absolute;
@@ -44,7 +60,6 @@ body{
 #cuca{
     width: 40%;
     height: 51em;
-/*    background-color: black;*/
     background-image: url(/img/back1.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -60,6 +75,55 @@ body{
 }
 #beliefbox>hr{
     border-color: black;
+}
+.things{
+    position: absolute;
+}
+.imgs>img{
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+}
+#imglogo1{
+    width: 23%;
+    height: 23em;
+    margin-top: 3em;
+    margin-left: 33%;
+}
+#using1{
+    width: 29%;
+    height: 23em;
+    margin-top: 23em;
+    margin-left: 1%;
+}
+.things>span{
+    display: inline-block;
+}
+.things>span>hr{
+    border-color: black;
+}
+#mind{
+    width: 35%;
+    margin-top: 2em;
+    margin-left: 1%;
+}
+#purpose{
+    width: 34%;
+    margin-top: 18em;
+    margin-left: 12%;
+}
+#case{
+    width: 27%;
+    margin-top: 33em;
+    margin-left: 25%;
+}
+#purpose_in{
+    list-style-type: upper-roman;
+    list-style-position: inside;
+}
+#case_in{
+    list-style-type: upper-roman;
+    list-style-position: inside;
 }
 
 /*--------------------sec2----------------------*/
@@ -77,21 +141,30 @@ body{
     border-color: black;
 }
 .btns{
-    width: 3.7%;
+    z-index: 101;
+    width: 2%;
     margin-top: 24em;
     position: absolute;
 }
 #leftbtn{
-    margin-left: 15%;
+    margin-left: 18%;
 }
 #rightbtn{
-    margin-left: 80%;
+    margin-left: 79%;
+}
+#leftbtnred{
+    margin-left: 18%;
+}
+#rightbtnred{
+    margin-left: 79%;
 }
 .btns>a>img{
     width: 100%;
 }
 #imgcal{
+    position: relative;
     width: 500%;
+    z-index: 100;
 }
 .cals{
     display: inline;
@@ -112,13 +185,13 @@ body{
 }
 #topmenu{
     height: 3.5em;
+    background-color: white;
 }
 #topmenu>li{
     width: 19%;
     height: 2.4em;
     padding-top: 1em;
     display: inline-block;
-/*    border: 1px solid silver;*/
     text-align: center;
 }
 #topmenu>li>a{
@@ -127,11 +200,23 @@ body{
     font-size: 120%;
 }
 .smallmenu{
+    margin-top: 0.86em;
+    width: 13%;
     position: absolute;
+    background-color: white;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    opacity: 0.8;
+    z-index: 101;
 }
 .smallmenu>li{
-    visibility: hidden;
+    padding-bottom: 0.5em;
+    border-top: 1px solid #e3e3e3;
     list-style: none;
+}
+.smallmenu>li>a{
+    color: black;
+    text-decoration: none;
 }
 #dotm{
     margin-left: 46.5%;
@@ -146,16 +231,21 @@ body{
     display: inline-block;
     margin-left: 3%;
 }
-#remote{
-    width: 6em;
-    height: 8em;
-    margin-top: 45em;
-    margin-left: 89%;
-    z-index: -1;
+#container{
     position: fixed;
-    border: 1px solid silver;
+    width: 80px;
+    height: 110px;
+    border: 2px solid black;
+    border-radius: 5px;
+    top: 40em;
+    left: 90%;
+    background-color: #efefef;
+    text-align: center;
+    z-index: 101;
 }
-
+#container>hr{
+    border-color: black;
+}
 /*---------------------------mobile---------------------------------*/
 @media all and (max-width: 767px){
 }
