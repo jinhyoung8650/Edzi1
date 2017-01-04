@@ -14,14 +14,14 @@
                        
                  
                         $("#loginForm").detach();
-                        $('#fbar').append("<div id='loginState' style='width:30px; height:20px; display: inline-block;'>"+data['id']+'님'+"</div>");
-                        $('#fbar').append("<button id='logout'>로그아웃</button>");
+                        $('#fbar').append("<div id='loginState' style=display: inline-block;'>"+data['id']+'님'+"<button id='logout'>로그아웃</button>"+"</div>");
+                       
                         
                 }
              },error: function(xhr, status, error){
                     var error_confirm=confirm('데이터 전송 오류입니다. 확인을 누르시면 페이지가 새로고침됩니다.');
                     if(error_confirm==true){
-                        console.log("saa");
+                       
                         document.location.reload();
                     }
                 }   
