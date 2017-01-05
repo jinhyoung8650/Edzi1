@@ -13,7 +13,9 @@
      }
     $id=strip_tags($_POST['id']);
     $pw=strip_tags($_POST['pw']);
-     
+    $id = $mysqli->real_escape_string($id); 
+    $pw = $mysqli->real_escape_string($pw); 
+
     $query  = $mysqli->query("select id, pw from memberinfo where id='$id'");
     $row    = $query->fetch_array();
     $count  = $query->num_rows;

@@ -1,5 +1,6 @@
 <?php
-   $host="localhost";
+    header('Content-Type: application/json');
+    $host="localhost";
     $user="root";
     $password="1";
     $dbname="member";
@@ -10,7 +11,8 @@
 
      $id = strip_tags($_POST['id']);
      $pw = strip_tags($_POST['pw']);
-     
+     $id = $mysqli->real_escape_string($id);
+     $pw = $mysqli->real_escape_string($pw);
     
      $check_id = $mysqli->query("SELECT id FROM memberinfo WHERE id='$id'");
      $count=$check_id->num_rows;
@@ -22,9 +24,9 @@
          $insert_query ="INSERT INTO memberinfo(id,pw)
          VALUES('$id','$pw')";
          mysqli_query($mysqli,$insert_query);
-         echo "성공적으로등록";
-     }else{
-         echo "존재함";
+       
+    
      }
+   echo json_encode(array('result'=>'success','msg'=>'등록되었습니다'));
    $mysqli->close();
 ?>

@@ -1,8 +1,58 @@
-#joinForm{
-   margin: 0 auto;
-   width: 60%;
-   border: 1px solid sliver;
-}
+
 #joinForm {
-    display: inline-block;
+   padding: 80px 0% 0% 24%;     
+   width: 50%;
+   display: inline-block;
+}
+table{
+   border-collapse: separate;
+    border-spacing: 22px 42px;
+    margin: 50px 0 50px 15%;
+}
+.join_th{
+     display:table-cell;
+     font-size: 1.2em;
+     padding:30px  12px 0  0px;
+     width: 180px;
+}
+
+.join_th>p{
+    font-size: 0.6em;
+    opacity: 0.6;
+}
+td{
+  position: relative;
+  top: 14px; 
+}
+#td1,#td3{
+  position: relative;
+  top: 26px;
+}
+#confirm_did,#confirm_dpw,#confirm_vali{
+    position: relative;
+    top: 12px;
+    font-size: 1em;
+    color: dodgerblue;
+    
+}
+#submit_btn{
+    margin: 30px 0% 20px 46.2%;
+    font-size: 2em;
+        
+}
+
+
+/*---------------------------mobile---------------------------------*/
+@media all and (max-width: 767px){
+}
+
+/*---------------------------tab---------------------------------*/
+@media all and (min-width: 767.1px) and (max-width: 1024px){
+}
+
+/*----------------------------pc--------------------------------*/
+@media all and (min-width: 1024.1px){
+  
+
+
 }

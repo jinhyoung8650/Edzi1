@@ -1,4 +1,5 @@
  function loginform(info){
+    
     $.ajax({
             url:$(info).attr("action"), 
             dataTyPe:"json", 
@@ -35,6 +36,7 @@
 $(document).ready(function(){
     var loginForm_clone= $("#loginForm").clone();
        $(document).on("click","#logout",function(){
+            console.log($("id").serialize());
             $("#logout").detach();
             $("#loginState").detach();
             $("#fbar").append(loginForm_clone);

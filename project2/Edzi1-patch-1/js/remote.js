@@ -40,6 +40,7 @@ var remocon =function(){
                if(scroll_height > pos+1){
                 $("html,body").stop().animate({scrollTop:pos},1000);
                  $("#log").text(index+1);
+                
             }
           })
         });

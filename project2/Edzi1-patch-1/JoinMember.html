@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>JoinMember</title>
-    <script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
+    
+      <script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,13 +13,125 @@
     <link href="css/TheEdzi.css" rel="stylesheet">
     <link href="css/ThirdPart.css" rel="stylesheet">
     <link href="css/Join.css" rel="stylesheet">
+    <script type="text/javascript" src="js/Edzi.js"></script>
     <script>
-    $(document).ready(function(){
-        $("#btn-create").on("click",function(){
-            console.log("aa");
-            
-        });
+   function register(){
+       
+         $.ajax({
+              url:"ajax/register.php",
+              dataTyPe:"json",
+              type:"post",
+              data:$("#join_member").serialize(),
+              success:function(data){
+                  console.log("aaaaa");
+                if(data['result']=="success"){
+                      alert(data['msg']);
+                    }
+              },error:function(xhr,status,error){
+                     var error_confirm=confirm('데이터 전송 오류입니다. 확인을 누르시면 페이지가 새로고침됩니다.');
+                    if(error_confirm==true){
+                        document.location.reload();
+                    }
+              }    
         
+            })
+              return false;
+   }          
+        
+   function confirm(){
+            $.ajax({
+                url:"ajax/confirm.php",
+                dataTyPe:"json",
+                type:"post",
+                data:$("#id").serialize(),
+                success:function(data){
+                     
+                    if(data['result']=="f"){
+                          $("#confirm_did").text(data['msg']);
+                         
+                    }else if(data['result']=="success"){
+                       $("#confirm_did").html("<div>"+data['msg']+"</div>");
+                    }
+                },error: function(xhr, status, error){
+                     var error_confirm=confirm('데이터 전송 오류입니다. 확인을 누르시면 페이지가 새로고침됩니다.');
+                    if(error_confirm==true){
+                        document.location.reload();
+                    }
+            }
+            })
+            return false;
+    }   
+        
+    function chkPwd(str){
+
+             var pw = str;
+
+             var num = pw.search(/[0-9]/g);
+
+             var eng = pw.search(/[a-z]/ig);
+
+             var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+
+
+             if(pw.length < 8 || pw.length > 15){
+             $("#confirm_vali").text("8자리 ~ 15자리 이내로 입력해주세요.");
+              
+              return false;
+
+             }
+
+             if(pw.search(/₩s/) != -1){
+             $("#confirm_vali").text("비밀번호는 공백업이 입력해주세요.");
+          
+
+              return false;
+
+             } if(num < 0 || eng < 0 || spe < 0 ){
+              $("#confirm_vali").text("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+              return false;
+
+             }
+
+
+
+             return true;
+
+    }    
+        
+        
+    $(document).ready(function(){
+     
+        $("#confirm_id").on("click",function(){
+           confirm();
+        });
+       
+           $('input[type=password]').off('keyup focus blur').on("keyup focus blur",function(e){
+              e.preventDefault();
+             var confirm_pw=$("#confirm_pw").val();
+             var pw=$("#pw").val();
+             if(chkPwd( $.trim($('#pw').val()))){
+                
+                $("#confirm_vali").text("");
+                  if((pw==confirm_pw)){
+                  $("#confirm_dpw").text('비밀번호가 일치합니다');
+                  $("#submit_btn").css("visibility", "visible");      
+                  }else{
+                     $("#confirm_dpw").text('비밀번호가 일치하지 않습니다');
+                  }
+                 return false;
+
+              }   
+        
+           });
+          
+                  
+        $("#submit_btn").css("visibility", "hidden");
+        
+        $("#submit_btn").on("click",function(){
+            
+          register();
+        }); 
     });
     
     
@@ -28,54 +141,62 @@
 </head>
 <body>
     <header>
-        <h1>회원가입</h1>
+        <div id="logobar">
+            <a id="logo" href="#">The Edzi</a>
+            <div id="monotext">본 페이지는 포트폴리오용으로 제작한 사이트입니다</div>
+        </div>
     </header>
-    <section>
+   
+    <section id="sec1">
         <div id="joinForm">
-        
-      <!--  $('#complete').click(function(){
-            var form = $('#weblogin-login-form')[0];
-            form.email.value = $('#id').val() + '@' + $('#domain').val();
-            form.password.value = $('#password').val();
-            $(form).submit();
-
-        });
-        -->
-             <form action="ajax/register.php" method="post" name="join_member" 
-              >
+             <form action="ajax/confirm.php" method="post" name="join_member" 
+              id="join_member">
               <input type="hidden" name="ACCESS" value="true">
               <fieldset>
                  <table>
+                    <tbody>
                      <tr>
-                         <th>Edzi계정</th>
-                         <td>
-                             <input type="text" id="joinId" name="id" value="">
-                         </td>
-                     </tr>
-                     <tr>
-                         <th>비밀번호(8~15자리)</th>
-                         <td>
-                             <input type="password" id="pw" name="pw" value="">
-                         </td>
-                     </tr>
-                     <tr>
-                         <th>비밀번호 확인</th>
-                         <td>
-                             <input type="password" id=confirm_pw name="confirm_pw" value="">
+                         <th class="join_th">Edzi계정</th>
+                         <td id="td1">
+                             <input type="text" id="id" name="id" value="">
+                             <input type="button" id="confirm_id" value="중복확인">
+                             <div id="confirm_did">&ensp;</div>
                           </td>
                      </tr>
-                      
+                     <tr>
+                         <th class="join_th">비밀번호(8~15자리)<p>영문 및 숫자를 입력해주세요</p></th>
+                         <td id="td2">
+                             <input type="password" id="pw" name="pw" value="">
+                             <div id="confirm_vali">&ensp;</div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <th class="join_th">비밀번호 확인</th>
+                         <td id="td3">
+                             <input type="password" id="confirm_pw" name="confirm_pw" value="">
+                             <div id="confirm_dpw" >&ensp;</div>
+                          </td>
+                     </tr>
+                   </tbody>
                  </table>
              </fieldset>
-               <input type="submit" value="제출"  name="submit1" id="submit1">
+               <input type="button" value="완료" id="submit_btn">
         </form>
         </div >
-         <!--  <button class="bts">
-            <a href="#" class="btn" id="btn-create">다음</a>
-        </button>-->
     </section>
+   <!-- ***************풋터 부분*************** -->
+    
     <footer>
-        
+        <span>
+            <hr>
+            <h1>INFORMATION</h1>
+        </span>
+        <address>
+            본 페이지는 포트폴리오용으로 제작된 페이지입니다.<br>
+            제작자 e-mail<br>
+            김진형 : dmdnt11@naver.com<br>
+            송근도 : rmseh9900@naver.com
+        </address>
     </footer>
 </body>
 </html>
