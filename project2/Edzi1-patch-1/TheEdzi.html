@@ -22,20 +22,24 @@
 <!-- ***************헤더 부분*************** -->
 
     <header>
-       <div id="fbar">
-            <form action="ajax/login.php"id="loginForm"name="form_ajax"method="post"
-                  onsubmit="return loginform(this)">
-                <input type="hidden" name="ACCESS" value="true">아이디
-                <input type="text" id="id" name="id" value="">/비밀번호 
-                <input type="password" id="pw" name="pw">
-                <input type="submit" value="로그인">
-                <button id="membtn"><a href="JoinMember.html">회원가입</a></button>
-            </form>
-        </div>
+      <!-- <div id="fbar">
+            
+        </div>-->
         <div id="logobar">
             <a id="logo" href="http://www.naver.com">The Edzi</a>
             <div id="monotext">본 페이지는 포트폴리오용으로 제작한 사이트입니다</div>
-        </div>
+            <form action="ajax/login.php"id="loginForm"name="form_ajax"method="post"
+                  onsubmit="return loginform(this)">
+                <input type="hidden" name="ACCESS" value="true">아이디
+                <input type="text" id="id" name="id" value="">
+                <input type="submit" class="login_btn" id="loginBtn" value="로그인">
+                <br>비밀번호 
+                <input type="password" id="pw" name="pw">
+               
+                <button id="membtn" class="login_btn"><a href="JoinMember.html">회원가입</a></button>
+            </form>
+        
+          </div>
     </header>
     
 <!-- ***************리모콘 부분*************** -->
