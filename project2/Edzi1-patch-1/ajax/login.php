@@ -1,8 +1,8 @@
 
    <?php
     // 일반 페이지에서 넘어왔을 시  차단
+    session_start(); 
     header('Content-Type: application/json');
-    
     $host="localhost";
     $user="root";
     $password="1";
@@ -13,16 +13,20 @@
      }
     $id=strip_tags($_POST['id']);
     $pw=strip_tags($_POST['pw']);
+    $_SESSION["id"] = strip_tags($_POST['id']);
+    
     $id = $mysqli->real_escape_string($id); 
     $pw = $mysqli->real_escape_string($pw); 
+    $_SESSION["id"] = $mysqli->real_escape_string($id); 
+ 
 
     $query  = $mysqli->query("select id, pw from memberinfo where id='$id'");
     $row    = $query->fetch_array();
     $count  = $query->num_rows;
-
+ 
     if($pw==$row['pw']&&$count==1){
         
-        echo json_encode(array('result'=>'success','msg'=>'로그인에 성공하였습니다.','id'=>$_POST['id']));
+        echo json_encode(array('result'=>'success','msg'=>'로그인에 성공하였습니다.','id'=>$_POST['id'],'session_id'=>$_SESSION["id"]));
         exit;
        
     } 

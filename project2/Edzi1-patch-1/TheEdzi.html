@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@
 <body>
    
 <!-- ***************헤더 부분*************** -->
-   
+
     <header>
        <div id="fbar">
             <form action="ajax/login.php"id="loginForm"name="form_ajax"method="post"
@@ -32,17 +33,14 @@
             </form>
         </div>
         <div id="logobar">
-            <a id="logo" href="#">The Edzi</a>
+            <a id="logo" href="http://www.naver.com">The Edzi</a>
             <div id="monotext">본 페이지는 포트폴리오용으로 제작한 사이트입니다</div>
         </div>
     </header>
     
 <!-- ***************리모콘 부분*************** -->
     
-<!-- 여기 리모콘 div 넣으면 안되 --> 
-    
-<!-- ***************1번째 부분*************** -->
-    
+
     <section id="sec1" class="sec">
         <div class="fwin" id="cuca">
             <div id="logotitle">
@@ -119,7 +117,7 @@
         <div id="menu">
             <hr>
             <ul id="topmenu">
-                <li id="tm1"><a href="#">탑</a>
+                <li id="tm1" class="tms"><a href="#" class="kor">탑</a><a href="#" class="eng">TOP</a>
                     <ul class="smallmenu" id="sm1">
                         <li><a href="#">라운드넥</a></li>
                         <li><a href="#">브이넥</a></li>
@@ -128,20 +126,20 @@
                         <li><a href="#">니트티</a></li>
                     </ul>
                 </li>
-                <li id="tm2"><a href="#">블라우스</a>
+                <li id="tm2" class="tms"><a href="#" class="kor">블라우스</a><a href="#" class="eng">BLOUSE</a>
                     <ul class="smallmenu" id="sm2">
                         <li><a href="#">블라우스</a></li>
                         <li><a href="#">셔츠</a></li>
                     </ul>
                 </li>
-                <li id="tm3"><a href="#">니트&가디건</a>
+                <li id="tm3" class="tms"><a href="#" class="kor">니트&가디건</a><a href="#" class="eng">KNIT & CARDIGAN</a>
                     <ul class="smallmenu" id="sm3">
                         <li><a href="#">니트</a></li>
                         <li><a href="#">가디건</a></li>
                         <li><a href="#">조끼</a></li>
                     </ul>
                 </li>
-                <li id="tm4"><a href="#">팬츠</a>
+                <li id="tm4" class="tms"><a href="#" class="kor">팬츠</a><a href="#" class="eng">PANTS</a>
                     <ul class="smallmenu" id="sm4">
                         <li><a href="#">스키니</a></li>
                         <li><a href="#">레깅스</a></li>
@@ -149,14 +147,43 @@
                         <li><a href="#">반바지</a></li>
                     </ul>
                 </li>
-                <li id="tm5"><a href="#">원피스</a>
+                <li id="tm5" class="tms"><a href="#" class="kor">원피스</a><a href="#" class="eng">ONEPIECE</a>
                     <ul class="smallmenu" id="sm5">
                         <li><a href="#">원피스</a></li>
                         <li><a href="#">스커트</a></li>
                     </ul>
                 </li>
+                <div id="libtn"><img src="img/btm_button.png"></div>
             </ul>
             <hr>
+            <div id="libox">
+                <div class="li_element">
+                    <a href="#">라운드넥</a><br>
+                    <a href="#">브이넥</a><br>
+                    <a href="#">나시</a><br>
+                    <a href="#">폴라/터틀넥</a><br>
+                    <a href="#">니트티</a>
+                </div>
+                <div class="li_element">
+                    <a href="#">블라우스</a><br>
+                    <a href="#">셔츠</a>
+                </div>
+                <div class="li_element">
+                    <a href="#">니트</a><br>
+                    <a href="#">가디건</a><br>
+                    <a href="#">조끼</a>
+                </div>
+                <div class="li_element">
+                    <a href="#">스키니</a><br>
+                    <a href="#">레깅스</a><br>
+                    <a href="#">청바지</a><br>
+                    <a href="#">반바지</a>
+                </div>
+                <div class="li_element">
+                    <a href="#">원피스</a><br>
+                    <a href="#">스커트</a>
+                </div>
+            </div>
         </div>
         <div id="imgcal">
             <ul id="calcap">
@@ -168,11 +195,11 @@
             </ul>
         </div>
         <div id="dotm">
-            <div class="dots" id="dot1"></div>
-            <div class="dots" id="dot2"></div>
-            <div class="dots" id="dot3"></div>
-            <div class="dots" id="dot4"></div>
-            <div class="dots" id="dot5"></div>
+            <div class="dots" id="dot1">0</div>
+            <div class="dots" id="dot2">1</div>
+            <div class="dots" id="dot3">2</div>
+            <div class="dots" id="dot4">3</div>
+            <div class="dots" id="dot5">4</div>
         </div>
     </section>
     
@@ -195,7 +222,7 @@
                             <figure class="product_figure">
                                 <a href="#">
                                     <img src="img/w_clothes1.jpg" alt="a">
-                                    <span>마쥬 더블 울코트</span><br>
+                                    <span><strong>마쥬 더블 울코트</strong></span><br>
                                     <span>소비자 가격 : </span><span class="tags">68500원</span><br>
                                     <span>판매 가격 : 47900원</span>
                                 </a>
@@ -210,7 +237,7 @@
                             <figure class="product_figure">
                                 <a href="#">
                                     <img src="img/w_clothes2.jpg" alt="a">
-                                    <span>코엘 일자 정장 팬츠</span><br>
+                                    <span><strong>코엘 일자 정장 팬츠</strong></span><br>
                                     <span>소비자 가격 : </span><span class="tags">54000원</span><br>
                                     <span>판매 가격 : 37800원</span>
                                 </a>
@@ -225,7 +252,7 @@
                             <figure class="product_figure">
                                 <a href="#">
                                     <img src="img/w_clothes3.jpg" alt="a">
-                                    <span>테디 반폴라 니트 조끼</span><br>
+                                    <span><strong>테디 반폴라 니트 조끼</strong></span><br>
                                     <span>소비자 가격 : </span><span class="tags">34500원</span><br>
                                     <span>판매 가격 : 27600원</span>
                                 </a>
@@ -251,7 +278,7 @@
                             <figure class="product_figure">
                                 <a href="#">
                                     <img src="img/m_clothes1.jpg" alt="a">
-                                    <span>에리슬 오버핏 폴라니트</span><br>
+                                    <span><strong>에리슬 오버핏 폴라니트</strong></span><br>
                                     <span>소비자 가격 : </span><span class="tags">37900원</span><br>
                                     <span>판매 가격 : 28400원</span>
                                 </a>
@@ -266,7 +293,7 @@
                             <figure class="product_figure">
                                 <a href="#">
                                     <img src="img/m_clothes3.jpg" alt="a">
-                                    <span>슬로우 생지 데님팬츠</span><br>
+                                    <span><strong>슬로우 생지 데님팬츠</strong></span><br>
                                     <span>소비자 가격 : </span><span class="tags">25900원</span><br>
                                     <span>판매 가격 : 18000원</span>
                                 </a>
@@ -281,7 +308,7 @@
                             <figure class="product_figure">
                                 <a href="#">
                                     <img src="img/m_clothes2.jpg" alt="a">
-                                    <span>센즈빈 골덴 양털자켓</span><br>
+                                    <span><strong>센즈빈 골덴 양털자켓</strong></span><br>
                                     <span>소비자 가격 : </span><span class="tags">39000원</span><br>
                                     <span>판매 가격 : 31200원</span>
                                 </a>
