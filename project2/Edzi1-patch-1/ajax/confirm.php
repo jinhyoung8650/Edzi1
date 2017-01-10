@@ -13,7 +13,20 @@
      $id = $mysqli->real_escape_string($id);
      $check_id = $mysqli->query("SELECT id FROM memberinfo WHERE id='$id'");
      $count=$check_id->num_rows;
-
+     if(empty($id)){
+            echo json_encode(array('result'=>'f','msg'=>'공백을 채워주세요'));
+            exit;
+     }
+     
+     if(!(strlen($_POST['id'])>5&&strlen($_POST['id']<12))){
+             echo json_encode(array('result'=>'f','msg'=>'5~12자 내외로 입력해주세요'));
+             exit;
+     }
+     
+     if(!ctype_alnum($id)){
+         echo json_encode(array('result'=>'f','msg'=>'영문자,숫자로 입력해주세요'));
+             exit;
+     }
  if($count==0){
        echo json_encode(array('result'=>'success','msg'=>'등록가능합니다'));
             exit;

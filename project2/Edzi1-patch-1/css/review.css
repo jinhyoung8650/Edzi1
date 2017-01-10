@@ -1,0 +1,75 @@
+#sec4{
+    width: 100%;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+}
+#boardList{
+    position: relative;
+    width: 60%;
+    left: 19.5%;
+}
+#boardList>table{
+    width: 100%;
+}
+#boardList>table>thead{
+    width: 100%;
+}
+#boardList th{
+    width: 100%;
+    padding: 5px 0;
+    border-top: 2px solid #666;
+    border-bottom: 1px solid #666;
+}
+#boardList tr:hover{
+    background: #eee;
+}
+#boardList td{
+    padding: 8px 0;
+    border-bottom: 1px solid #666;
+}
+#boardList .no{
+    width: 8%;
+    text-align: center;
+}
+#boardList .author{
+    width: 15%;
+    text-align: center;
+}
+#boardList .title{
+    width: 50%;
+    text-align: center;
+}
+#boardList .date{
+    width: 20%;
+    text-align: center;
+}
+#boardList .hit{
+    width: 7%;
+    text-align: center;
+}
+#boardList .btnSet{
+    text-align: right;
+}
+
+#boardList .paging{
+    text-align: center;
+}
+#boardList .paging li{
+    display: inline-block;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0 5px;
+    border: 1px solid #666;
+    background: #eee;
+    line-height: 21px;
+}
+#boardList .paging li.current, #boardList .paging li:hover{
+    background: #666;
+}
+#boardList .paging li.current, #boardList .paging li:hover a{
+    color: #ddd;
+}
+#boardList .searchBox{
+    text-align: center;
+}

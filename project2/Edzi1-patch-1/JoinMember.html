@@ -14,128 +14,7 @@
     <link href="css/ThirdPart.css" rel="stylesheet">
     <link href="css/Join.css" rel="stylesheet">
     <script type="text/javascript" src="js/Edzi.js"></script>
-    <script>
-   function register(){
-       
-         $.ajax({
-              url:"ajax/register.php",
-              dataTyPe:"json",
-              type:"post",
-              data:$("#join_member").serialize(),
-              success:function(data){
-                  console.log("aaaaa");
-                if(data['result']=="success"){
-                      alert(data['msg']);
-                    }
-              },error:function(xhr,status,error){
-                     var error_confirm=confirm('데이터 전송 오류입니다. 확인을 누르시면 페이지가 새로고침됩니다.');
-                    if(error_confirm==true){
-                        document.location.reload();
-                    }
-              }    
-        
-            })
-              return false;
-   }          
-        
-   function confirm(){
-            $.ajax({
-                url:"ajax/confirm.php",
-                dataTyPe:"json",
-                type:"post",
-                data:$("#id").serialize(),
-                success:function(data){
-                     
-                    if(data['result']=="f"){
-                          $("#confirm_did").text(data['msg']);
-                         
-                    }else if(data['result']=="success"){
-                       $("#confirm_did").html("<div>"+data['msg']+"</div>");
-                    }
-                },error: function(xhr, status, error){
-                     var error_confirm=confirm('데이터 전송 오류입니다. 확인을 누르시면 페이지가 새로고침됩니다.');
-                    if(error_confirm==true){
-                        document.location.reload();
-                    }
-            }
-            })
-            return false;
-    }   
-        
-    function chkPwd(str){
-
-             var pw = str;
-
-             var num = pw.search(/[0-9]/g);
-
-             var eng = pw.search(/[a-z]/ig);
-
-             var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-
-
-
-             if(pw.length < 8 || pw.length > 15){
-             $("#confirm_vali").text("8자리 ~ 15자리 이내로 입력해주세요.");
-              
-              return false;
-
-             }
-
-             if(pw.search(/₩s/) != -1){
-             $("#confirm_vali").text("비밀번호는 공백업이 입력해주세요.");
-          
-
-              return false;
-
-             } if(num < 0 || eng < 0 || spe < 0 ){
-              $("#confirm_vali").text("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
-              return false;
-
-             }
-
-
-
-             return true;
-
-    }    
-        
-        
-    $(document).ready(function(){
-     
-        $("#confirm_id").on("click",function(){
-           confirm();
-        });
-       
-           $('input[type=password]').off('keyup focus blur').on("keyup focus blur",function(e){
-              e.preventDefault();
-             var confirm_pw=$("#confirm_pw").val();
-             var pw=$("#pw").val();
-             if(chkPwd( $.trim($('#pw').val()))){
-                
-                $("#confirm_vali").text("");
-                  if((pw==confirm_pw)){
-                  $("#confirm_dpw").text('비밀번호가 일치합니다');
-                  $("#submit_btn").css("visibility", "visible");      
-                  }else{
-                     $("#confirm_dpw").text('비밀번호가 일치하지 않습니다');
-                  }
-                 return false;
-
-              }   
-        
-           });
-          
-                  
-        $("#submit_btn").css("visibility", "hidden");
-        
-        $("#submit_btn").on("click",function(){
-            
-          register();
-        }); 
-    });
-    
-    
-    </script>
+    <script type="text/javascript" src="js/register.js"></script>
     
     
 </head>
@@ -149,31 +28,35 @@
    
     <section id="sec1">
         <div id="joinForm">
+             <div id="joinComplete">
+                  <p>회원가입이 완료되었습니다</p>
+                  <button id>홈페이지로</button>
+              </div>
              <form action="ajax/confirm.php" method="post" name="join_member" 
               id="join_member">
               <input type="hidden" name="ACCESS" value="true">
+             
               <fieldset>
                  <table>
                     <tbody>
                      <tr>
-                         <th class="join_th">Edzi계정</th>
+                         <th class="join_th">Edzi계정(5~15자리)<p>영문 및 숫자를 입력해주세요</p></th>
                          <td id="td1">
-                             <input type="text" id="id" name="id" value="">
-                             <input type="button" id="confirm_id" value="중복확인">
+                             <input type="text" class="td_input" id="id" name="id" style="IME-MODE: disabled" value="" placeholder="Edzi계정(5~15자리)">
                              <div id="confirm_did">&ensp;</div>
                           </td>
                      </tr>
                      <tr>
                          <th class="join_th">비밀번호(8~15자리)<p>영문 및 숫자를 입력해주세요</p></th>
                          <td id="td2">
-                             <input type="password" id="pw" name="pw" value="">
+                             <input type="password" class="td_input" id="pw"  name="pw" value="" placeholder="비밀번호(8~15자리)">
                              <div id="confirm_vali">&ensp;</div>
                          </td>
                      </tr>
                      <tr>
                          <th class="join_th">비밀번호 확인</th>
                          <td id="td3">
-                             <input type="password" id="confirm_pw" name="confirm_pw" value="">
+                             <input type="password" class="td_input" id="confirm_pw" name="confirm_pw" placeholder="비밀번호 확인" value="">
                              <div id="confirm_dpw" >&ensp;</div>
                           </td>
                      </tr>

@@ -5,36 +5,6 @@
 header{
     width: 100%;
 }
-a{
-  text-decoration: none;
-  color:#000;
-    
-}
-
- .login_btn {
-    position: relative;
-    top: 0.6px;
-	background:-moz-linear-gradient( center top, #fffff0 5%, #fffff0  100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f494f', endColorstr='#050505');
-	background-color:#ffffff;
-	display:inline-block;
-	color:#000;
-    border-radius:6px 1px;
-	font-weight:bold;
-    line-height: 16.3px;
-	width:65px;
-	text-decoration:none;
-}
-.login_btn:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fffff1), color-stop(1, #ffff\f) );
-	background:-moz-linear-gradient( center top, #050505 15%, #4f494f 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#050505', endColorstr='#4f494f');
-	background-color:#f0edf0;
-}.login_btn:active {
-	position:relative;
-	top:1px;
-}
-
 /*---------------------------mobile---------------------------------*/
 @media all and (max-width: 767px){
     #fbar{
@@ -72,32 +42,11 @@ a{
 
 /*---------------------------tab---------------------------------*/
 @media all and (min-width: 767.1px) and (max-width: 1024px){
-/*    #fbar{
+    #fbar{
         width: 100%;
         height: 1.5em;
         background-color: #e7e7e7;
-    }*/
-    
-     #loginForm{
-        position: absolute;
-        text-align: left;
-        color: floralwhite;
-        width: 22em;
-        left: 68.4%;
-        top:3%;
     }
-    #loginForm>input:not(#loginBtn){
-        margin-bottom:3px;
-        width: 7.5em;
-    }
-    #id{
-        position: relative;
-        margin-right: 16px;
-        left: 16.0px;
-    }
-
-      
-/* This button was generated using CSSButtonGenerator.com */
     #logobar{
         width: 100%;
         height: 5em;
@@ -123,27 +72,11 @@ a{
 
 /*----------------------------pc--------------------------------*/
 @media all and (min-width: 1024.1px){
- /*   #fbar{
+    #fbar{
         width: 100%;
         height: 1.5em;
         background-color: #e7e7e7;
-    }*/
-    #loginForm{
-        position: absolute;
-        text-align: left;
-        color: floralwhite;
-        width: 22em;
-        left: 75%;
-        top:3%;
-    }
-    #loginForm>input:not(#loginBtn){
-        margin-bottom:3px;
-        width: 8em;
-    }
-    #id{
-        position: relative;
-        margin-right: 16px;
-        left: 16.0px;
+        text-align-last: right;
     }
     #logobar{
         width: 100%;
@@ -163,5 +96,7 @@ a{
     #login{
         font-size: 90%;
     }
-   
+    #login>input{
+        width: 8em;
+    }
 }

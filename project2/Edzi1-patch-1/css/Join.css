@@ -1,33 +1,30 @@
 
 #joinForm {
-   padding: 80px 0% 0% 24%;     
-   width: 50%;
+ padding: 0px 10% 0% 10%;     
+   width: 80%;
+  
    display: inline-block;
+}
+fieldset{
+     padding: 0px 14% 0% 14%; 
+    height: 400px;
 }
 table{
    border-collapse: separate;
     border-spacing: 22px 42px;
-    margin: 50px 0 50px 15%;
+    margin: 0 0 0px 25%;
 }
 .join_th{
      display:table-cell;
      font-size: 1.2em;
-     padding:30px  12px 0  0px;
+     padding:30px  0px 0  0px;
      width: 180px;
 }
-
 .join_th>p{
     font-size: 0.6em;
-    opacity: 0.6;
+    opacity: 0.7;
 }
-td{
-  position: relative;
-  top: 14px; 
-}
-#td1,#td3{
-  position: relative;
-  top: 26px;
-}
+
 #confirm_did,#confirm_dpw,#confirm_vali{
     position: relative;
     top: 12px;
@@ -36,23 +33,154 @@ td{
     
 }
 #submit_btn{
-    margin: 30px 0% 20px 46.2%;
+    position: relative;
+    top:-20px;
+    margin: 0px 0% 20px 46.2%;
     font-size: 2em;
         
 }
 
+td{
+  position: relative;
+  top: 25px; 
+}
+#td1,#td2{
+  position: relative;
+  top: 20px; 
+}
+
+#submit_btn{
+    margin: 30px 0% 20px 46.2%;
+    font-size: 2em;
+}
+
+#joinComplete{
+    visibility: hidden;
+    width: 100%;
+}
+#joinComplete>button{
+    position: relative;
+    margin:0 43.6% 0 46.4%;
+    top:60px;
+    width: 100px;
+    height: 30px;
+}
+#joinComplete>p{
+    font-size: 2em;
+    text-align: center;
+}
+#join_member{
+    visibility: visible;
+}
 
 /*---------------------------mobile---------------------------------*/
 @media all and (max-width: 767px){
+    html{
+        height: 100%;
+    }
+    #sec1{ 
+        height: 100%;
+        margin: 0 auto;
+}   
+#joinForm {
+     position: relative;
+     top:-14px;
+     padding: 0px 0% 0% 00%;
+     height: 200px;
+     width: 100%;
+     display: inline-block;
+}
+#join_member{
+    position: relative;
+    top:-100px;
+    min-height: 200px;
+     max-height: 300px;      
+}
+fieldset{
+     position: relative;
+     padding: 0px 00% 0% 00%; 
+     min-height: 200px; 
+     max-height: 300px;
+}
+    
+table{
+   border-collapse: separate;
+    border-spacing: 2px 2px;
+    margin: 0 5% 0px 5%;
+}
+   
+.join_th{
+     display:table-cell;
+     font-size: 0.5em;
+     padding:20px  3px 0  0px;
+     width: 80px;
+}
+.join_th>p{
+    font-size: 0.3em;
+    opacity: 0.7;
+}
+   
+.td_input{
+      width: 80px;  
+    }
+#confirm_did,#confirm_dpw,#confirm_vali{
+    position: relative;
+    top: 12px;
+    width: 50%;
+    font-size: 0.7em;
+    color: dodgerblue;
+    
+}    
+    
+    
+    
+    
 }
 
 /*---------------------------tab---------------------------------*/
 @media all and (min-width: 767.1px) and (max-width: 1024px){
+
+    
+#joinForm {
+ padding: 0px 10% 0% 10%;     
+   width: 80%;
+  
+   display: inline-block;
+}
+fieldset{
+     padding: 0px 04% 0% 04%; 
+    height: 400px;
+}
+    
+    table{
+   border-collapse: separate;
+    border-spacing: 22px 42px;
+    margin: 0 0 0px 0%;
+}
+    
+.join_th{
+     display:table-cell;
+     font-size: 1em;
+     padding:30px  0px 0  0px;
+     width: 180px;
+}
+.join_th>p{
+    font-size: 0.6em;
+    opacity: 0.7;
+}
+
+#confirm_did,#confirm_dpw,#confirm_vali{
+    position: relative;
+    top: 12px;
+    font-size: 1em;
+    color: dodgerblue;
+    
+}    
+    
+    
 }
 
 /*----------------------------pc--------------------------------*/
 @media all and (min-width: 1024.1px){
-  
-
-
+ 
 }

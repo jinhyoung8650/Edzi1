@@ -7,5 +7,14 @@
     if ($mysqli->connect_errno) {
          die("ERROR : -> ".$DBcon->connect_error);
      }
-  
+    /* if($mysqli){
+         $str="A";
+         $aaa=ctype_lower($str);
+         if($aaa){
+             echo "aaa"; 
+         }else{
+              echo "bbb";
+         }
+        
+     }*/
 ?>
