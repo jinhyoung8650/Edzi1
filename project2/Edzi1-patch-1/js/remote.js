@@ -100,7 +100,7 @@ else{
     });
     $(window).on('resizeEnd', function() {
         var contain = $("#container");
-      var device_width=$(window).width();
+        var device_width=$(window).width();
         if(device_width>1025){
       
             if ( $("#container").length > 0 ) {

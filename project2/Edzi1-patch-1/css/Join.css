@@ -1,186 +1,253 @@
-
-#joinForm {
- padding: 0px 10% 0% 10%;     
-   width: 80%;
-  
-   display: inline-block;
+#sec1{
+        height: 647.5px;
 }
-fieldset{
-     padding: 0px 14% 0% 14%; 
-    height: 400px;
-}
-table{
-   border-collapse: separate;
-    border-spacing: 22px 42px;
-    margin: 0 0 0px 25%;
-}
-.join_th{
-     display:table-cell;
-     font-size: 1.2em;
-     padding:30px  0px 0  0px;
-     width: 180px;
-}
-.join_th>p{
-    font-size: 0.6em;
-    opacity: 0.7;
-}
-
-#confirm_did,#confirm_dpw,#confirm_vali{
+#join_member{
+    margin: 0,auto;
     position: relative;
-    top: 12px;
-    font-size: 1em;
-    color: dodgerblue;
-    
-}
-#submit_btn{
-    position: relative;
-    top:-20px;
-    margin: 0px 0% 20px 46.2%;
-    font-size: 2em;
-        
-}
-
-td{
-  position: relative;
-  top: 25px; 
-}
-#td1,#td2{
-  position: relative;
-  top: 20px; 
-}
-
-#submit_btn{
-    margin: 30px 0% 20px 46.2%;
-    font-size: 2em;
-}
-
-#joinComplete{
-    visibility: hidden;
+    top:-23%;
     width: 100%;
+    height: 320px;
 }
-#joinComplete>button{
-    position: relative;
-    margin:0 43.6% 0 46.4%;
-    top:60px;
-    width: 100px;
-    height: 30px;
-}
-#joinComplete>p{
-    font-size: 2em;
-    text-align: center;
-}
-#join_member{
-    visibility: visible;
-}
-
-/*---------------------------mobile---------------------------------*/
-@media all and (max-width: 767px){
-    html{
-        height: 100%;
-    }
-    #sec1{ 
-        height: 100%;
-        margin: 0 auto;
-}   
-#joinForm {
-     position: relative;
-     top:-14px;
-     padding: 0px 0% 0% 00%;
-     height: 200px;
-     width: 100%;
-     display: inline-block;
-}
-#join_member{
-    position: relative;
-    top:-100px;
-    min-height: 200px;
-     max-height: 300px;      
-}
-fieldset{
-     position: relative;
-     padding: 0px 00% 0% 00%; 
-     min-height: 200px; 
-     max-height: 300px;
-}
-    
 table{
-   border-collapse: separate;
+    position: relative;
+    border-collapse: separate;
+    width:50%;
     border-spacing: 2px 2px;
     margin: 0 5% 0px 5%;
 }
-   
-.join_th{
-     display:table-cell;
-     font-size: 0.5em;
-     padding:20px  3px 0  0px;
-     width: 80px;
+th{
+    display:table-cell;
+    position: relative;
+    top:0px;
+    padding:0px  0px 60px  0px;
+    text-align: left;
 }
-.join_th>p{
+td{ 
+    position: relative;
+    display: table-cell;
+    padding: 0 0;
+    top:20px;
+} 
+#confirm_did,#confirm_dpw,#confirm_vali{
+    position: relative;
+    top: 12px;
+    width: 74%;
+    color: dodgerblue;
+} 
+#submit_btn{
+    position: relative;
+    visibility: visible;
+    top:40px;
+    margin: 0px 0% 20px 48.2%;
+    font-size: 2em;
+}
+#joinComplete{
+    visibility: visible;
+    width: 100%;
+}
+
+#joinComplete>button{
+    position:absolute;
+    z-index: 1;
+    top:400px;
+    left: 46%;
+    right: 40%;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+	background-color:#f9f9f9;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+#joinComplete>button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+	background-color:#e9e9e9;
+}
+#joinComplete>button:active {
+	top:401px;
+}
+
+
+
+
+
+
+
+
+#joinComplete>p{
+    position: relative;
+    top: 170px;
+    font-size: 2em;
+    text-align: center;
+}
+
+/*---------------------------mobile---------------------------------*/
+@media all and (max-width: 767px) {
+   
+table{
+    padding: 0 25% 0 23%;
+    right: 10%;
+    left: 5%;
+}
+
+#join_member{
+    top:-23%;
+}
+th{
+   padding-bottom: 120px;
+    left: 7.8%;
+    right: 60%;
+    text-align: center;
+    font-size: 1.2em;
+    min-width: 200px;
+}
+th>p{
+    position: relative;
+    left: 0%;
+    font-size: 0.6em;
+    opacity: 0.8;
+}
+td{ 
+    top:50px;
+    height: 20px;
+    left: -33%;
+    right: -60%;
+    font-size: 1em; 
+}  
+td>p{
     font-size: 0.3em;
     opacity: 0.7;
 }
    
 .td_input{
-      width: 80px;  
+      min-width: 30%;
+      max-width: 70%;
+      font-size: 0.9em;
     }
 #confirm_did,#confirm_dpw,#confirm_vali{
-    position: relative;
-    top: 12px;
-    width: 50%;
-    font-size: 0.7em;
-    color: dodgerblue;
-    
+    top:7px;
+    width: 220px;
+    height: 3em;
+    font-size: 0.8em;
 }    
+#submit_btn{
+ 
+    margin: 30px 22% 20px 49.7%;
+    font-size: 2em;
     
-    
-    
-    
+} 
+    #joinComplete>button{
+      left: 36%;
+    right: 20%; 
+    }
 }
 
 /*---------------------------tab---------------------------------*/
 @media all and (min-width: 767.1px) and (max-width: 1024px){
-
-    
 #joinForm {
- padding: 0px 10% 0% 10%;     
-   width: 80%;
-  
-   display: inline-block;
+
+    height: 425px;
+    right: 0%;
 }
-fieldset{
-     padding: 0px 04% 0% 04%; 
-    height: 400px;
+   
+
+table{
+    top:100px;
+    left: 5%;
+    width: 70%;
 }
-    
-    table{
-   border-collapse: separate;
-    border-spacing: 22px 42px;
-    margin: 0 0 0px 0%;
+th{
+    left: -3%;
+    font-size: 1.3em;
+    width: 60%;
 }
-    
-.join_th{
-     display:table-cell;
-     font-size: 1em;
-     padding:30px  0px 0  0px;
-     width: 180px;
-}
-.join_th>p{
-    font-size: 0.6em;
+td{ 
+    height: 40px;
+    top:-5px;
+    font-size: 0.9em; 
+}  
+ 
+td>p{ 
+    font-size: 1.0em;
     opacity: 0.7;
 }
-
+.td_input{
+      width: 80%;
+      height: 20%;
+      font-size: 1.4em;
+    }
 #confirm_did,#confirm_dpw,#confirm_vali{
-    position: relative;
-    top: 12px;
-    font-size: 1em;
-    color: dodgerblue;
-    
-}    
-    
+    font-size: 1.0em;
+    width: 280px;
+}   
     
 }
 
 /*----------------------------pc--------------------------------*/
 @media all and (min-width: 1024.1px){
- 
+#sec1{
+        height: 647.5px;
+}
+  
+table{
+    top:30px;
+    left: 15%;
+    border-collapse: separate;
+    height: 300px;
+    width: 50%;
+    border-spacing: 2px 2px;
+}  
+.join_th{
+    left: -30px;
+    font-size: 1.2em;
+    padding:0px  0px 20px  0px;
+    text-align: left;
+}
+td{ 
+    height: 150px;
+    left: 5%;
+    top:20px;
+    font-size: 1.0em; 
+}  
+
+th>p{
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+   
+.td_input{
+      width: 180px;
+      height: 20%;
+      font-size: 1.3em;
+    }
+#confirm_did,#confirm_dpw,#confirm_vali{
+    width: 220px;
+    height: 3em;
+    font-size: 1.3em;
+} 
+    
 }

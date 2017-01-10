@@ -15,7 +15,7 @@
     <link href="css/Join.css" rel="stylesheet">
     <script type="text/javascript" src="js/Edzi.js"></script>
     <script type="text/javascript" src="js/register.js"></script>
-    
+    <script type="text/javascript" src="js/leftMoveCss.js"></script>
     
 </head>
 <body>
@@ -35,34 +35,32 @@
              <form action="ajax/confirm.php" method="post" name="join_member" 
               id="join_member">
               <input type="hidden" name="ACCESS" value="true">
-             
-              <fieldset>
                  <table>
                     <tbody>
                      <tr>
                          <th class="join_th">Edzi계정(5~15자리)<p>영문 및 숫자를 입력해주세요</p></th>
-                         <td id="td1">
+                         <td id="td1" class="td">
                              <input type="text" class="td_input" id="id" name="id" style="IME-MODE: disabled" value="" placeholder="Edzi계정(5~15자리)">
                              <div id="confirm_did">&ensp;</div>
                           </td>
                      </tr>
                      <tr>
-                         <th class="join_th">비밀번호(8~15자리)<p>영문 및 숫자를 입력해주세요</p></th>
-                         <td id="td2">
+                         <th class="join_th" >비밀번호(8~15자리)<p>영문 및 숫자를 입력해주세요</p></th>
+                         <td id="td2" class="td">
                              <input type="password" class="td_input" id="pw"  name="pw" value="" placeholder="비밀번호(8~15자리)">
                              <div id="confirm_vali">&ensp;</div>
                          </td>
                      </tr>
                      <tr>
                          <th class="join_th">비밀번호 확인</th>
-                         <td id="td3">
+                         <td id="td3" class="td">
                              <input type="password" class="td_input" id="confirm_pw" name="confirm_pw" placeholder="비밀번호 확인" value="">
                              <div id="confirm_dpw" >&ensp;</div>
                           </td>
                      </tr>
                    </tbody>
                  </table>
-             </fieldset>
+            
                <input type="button" value="완료" id="submit_btn">
         </form>
         </div >
