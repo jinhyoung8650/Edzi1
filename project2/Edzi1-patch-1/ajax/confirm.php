@@ -1,14 +1,7 @@
 <?php
-
+ require_once("dbconnect.php");
  header("content-Type: application/json");
-    $host="localhost";
-    $user="root";
-    $password="1";
-    $dbname="member";
-    $mysqli = new mysqli($host,$user,$password,$dbname);
-    if ($mysqli->connect_errno) {
-         die("ERROR : -> ".$DBcon->connect_error);
-     }
+   
      $id = strip_tags($_POST['id']);
      $id = $mysqli->real_escape_string($id);
      $check_id = $mysqli->query("SELECT id FROM memberinfo WHERE id='$id'");

@@ -137,6 +137,7 @@
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/Edzi.js"></script>
     <script type="text/javascript" src="js/write.js"></script>
+    <script type="text/javascript" src="js/View.js"></script>
 </head>
 <body>
    

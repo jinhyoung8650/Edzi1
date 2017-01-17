@@ -1,17 +1,11 @@
 <?php
-    // 일반 페이지에서 넘어왔을 시  차단
+    require_once("dbconnect.php");
+   // 일반 페이지에서 넘어왔을 시  차단
     session_start();
-
+    
     header('Content-Type: application/json');
 
-    $host="localhost";
-    $user="root";
-    $password="1";
-    $dbname="member";
-    $mysqli = new mysqli($host,$user,$password,$dbname);
-    if($mysqli->connect_errno){
-        die("ERROR : -> ".$DBcon->connect_error);
-    }
+  
     $id=strip_tags($_POST['id']);
     $pw=strip_tags($_POST['pw']);
     $_SESSION["id"] = strip_tags($_POST['id']);

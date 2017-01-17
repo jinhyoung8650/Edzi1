@@ -7,7 +7,7 @@
 	}
 
 	if(isset($bNo)) {
-		$sql = 'select b_title, b_content, b_id from board_free where b_no = ' .$bNo;
+		$sql = 'select b_title, b_content, b_id from board_free where b_no = '.$bNo;
 		$result = $db->query($sql);
 		$row = $result->fetch_assoc();
 	}
@@ -39,7 +39,7 @@
 						<tr>
 							<th scope="row"><label for="bTitle">제목</label></th>
 							<td class="title"><input type="text" name="bTitle" id="bTitle"
-							value="<?php echo isset($row['b_title'])?$row['b_title']:null ?>">
+				value="<?php echo isset($row['b_title'])?$row['b_title']:null ?>">
 							</td>
 						</tr>
 						<tr>
