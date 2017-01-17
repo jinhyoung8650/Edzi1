@@ -1,9 +1,11 @@
 <?php
 require_once("dbconfig.php");
 header('Content-Type: application/json');
-	$page=$_GET['pageInt'];
+	$page=strip_tags($_GET['pageInt']);
+    $page= $db->real_escape_string($page);
   if(isset($_GET['searchColumn'])) {
-		$searchColumn = $_GET['searchColumn'];
+		$searchColumn = strip_tags($_GET['searchColumn']);
+        $searchColumn = $db->real_escape_string($searchColumn);
 		$subString = '&amp;searchColumn=' . $searchColumn;
 	}
     else{
@@ -11,7 +13,8 @@ header('Content-Type: application/json');
         $subString = null;
     }
 	if(isset($_GET['searchText'])) {
-		$searchText = $_GET['searchText'];
+		$searchText = strip_tags($_GET['searchText']);
+		$searchText = $db->real_escape_string($_GET['searchText']);
 		$subString .= '&amp;searchText=' . $searchText;
 	}
     else{
@@ -34,7 +37,7 @@ header('Content-Type: application/json');
 
 if(empty($allPost)){
      $emptyData = '<tr><td class="textCenter" colspan="5">글이 존재하지 않습니다.</td></tr>';
-      echo json_encode(array("emtpyData"=>$emptyData));
+      echo json_encode(array("msg"=>$emptyData));
     exit;
 	}else {
 		$onePage = 4; // 한 페이지에 보여줄 게시글의 수.
