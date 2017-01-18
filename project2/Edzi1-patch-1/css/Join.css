@@ -171,7 +171,7 @@ td>p{
     }
 #confirm_did,#confirm_dpw,#confirm_vali{
     top:7px;
-    width: 220px;
+    width: 150px;
     height: 3em;
     font-size: 0.8em;
 }    
@@ -242,7 +242,8 @@ th>p{
         left: 480px;
        
         height:18.4em;
-        width: 35%;
+   
+        width: 50%;
         background-image: url(/img/back1.png);
         background-size: 100% 100%;
         background-repeat: no-repeat;

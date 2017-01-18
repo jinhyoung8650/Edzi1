@@ -571,7 +571,7 @@ footer>span>hr{
         border-radius: 5px;
         top: 40em;
         left: 90%;
-        background-color: #efefef;
+       
         text-align: center;
         z-index: 101;
         display: none;
@@ -809,21 +809,7 @@ footer>span>hr{
     .dots:hover{
         background-color: black;
     }
-    #container{
-        position: fixed;
-        width: 80px;
-        height: 110px;
-        border: 2px solid black;
-        border-radius: 5px;
-        top: 40em;
-        left: 90%;
-        background-color: #efefef;
-        text-align: center;
-        z-index: 101;
-    }
-    #container>hr{
-        border-color: black;
-    }
+  
     footer>address{
         margin-left: 17%;
     }
