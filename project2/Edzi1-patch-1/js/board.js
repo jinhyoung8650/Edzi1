@@ -46,20 +46,20 @@
 
      $(document).ready(function(e){
          var move=1;
+         var oneSection=3;
          pageMove(1);
          $(document).on("click",".page_end",function(){
              last("lastPage");
          });   
          $(document).on("click",".page_start",function(){
-             b=1;
             pageMove(1);
          });  
          $(document).on("click",".page_next",function(){
-            move+=3;
+            move+=oneSection;
            pageMove( move);
          });   
          $(document).on("click",".page_prev",function(){
-             move-=3;
+             move-=oneSection;
             pageMove(move);
          });  
            
