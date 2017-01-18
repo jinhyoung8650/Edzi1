@@ -40,14 +40,14 @@ if(empty($allPost)){
       echo json_encode(array("msg"=>$emptyData));
     exit;
 	}else {
-		$onePage = 4; // 한 페이지에 보여줄 게시글의 수.
+		$onePage = 2; // 한 페이지에 보여줄 게시글의 수.
 		$allPage = ceil($allPost / $onePage); //전체 페이지의 수
 		if($page < 1 && $page > $allPage) {
              echo json_encode(array('msg'=>"존재하지않는 페이지입니다"));
            exit;
 		} 
 
-        $oneSection = 10; //한번에 보여줄 총 페이지 개수(1 ~ 10, 11 ~ 20 ...)
+        $oneSection = 3; //한번에 보여줄 총 페이지 개수(1 ~ 10, 11 ~ 20 ...)
 		$currentSection = ceil($page / $oneSection); //현재 섹션
 		$allSection = ceil($allPage / $oneSection); //전체 섹션의 수
 		
@@ -71,7 +71,7 @@ if(empty($allPost)){
 		}
 		//첫 섹션이 아니라면 이전 버튼을 생성
 		if($currentSection != 1) { 
-			$paging .= '<li class="page page_prev"><a href="./index.php?page=' . $prevPage . $subString . '">이전</a></li>';
+			$paging .= '<li class="page page_prev"><a>이전</a></li>';
           
 		}
 		
@@ -87,7 +87,7 @@ if(empty($allPost)){
 		
 		//마지막 섹션이 아니라면 다음 버튼을 생성
 		if($currentSection != $allSection) { 
-			$paging .= '<li class="page page_next"><a href="./index.php?page=' . $nextPage . $subString . '">다음</a></li>';
+			$paging .= '<li class="page page_next"><a>다음<a></li>';
             
 		}
 		
@@ -125,9 +125,9 @@ if(empty($allPost)){
 				 $tr.="<tr class='tr'><td>".$row['b_no']."</td><td class='title'><a href='$b_no'>".$row['b_title']."</a></td><td>".$row['b_id']."</td><td>".$row['b_date']."</td><td>".$row['b_hit']."</td></tr>";
 		        
 			}
-               
+          
              
-           echo json_encode(array('msg'=>$tr,'paging'=>$paging,"page"=>$page,"allPage"=>$allPage,'firstPage'=>$firstPage,"sql"=>$sql,"searchColumn"=>$searchColumn, "searchText"=>$searchText));
+           echo json_encode(array('msg'=>$tr,'paging'=>$paging,"page"=>$page,"allPage"=>$allPage,'firstPage'=>$firstPage,"sql"=>$sql,"searchColumn"=>$searchColumn, "searchText"=>$searchText,"nextPage"=>$nextPage,"prevPage"=>$prevPage,"a"=>$currentSection));
             
   }
 					
