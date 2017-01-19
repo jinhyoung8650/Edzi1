@@ -117,27 +117,31 @@ a{
    
 #join_member{
     position: relative;
-    width: 90%;
+    width: 99%;
     top:-50px;
-    left: 15%;
+    left: 12%;
+     margin:  0 auto ;
+     padding: 0 auto;
    
+  
 }
+ 
 table{
-     margin:  1em auto 1em;
-    left: 0%;
-    position: relative;
     width: 30%;
+     margin:  1em auto 1em;
+    left: -0.5%;
+    position: relative;
+  
+    top:1em;
+}
     
-    top:2em;
-     
-
-}  
+ 
 #cuca{
         display: none;
 }
 th{
-   padding-bottom: 120px;
-    left: 7.8%;
+   padding-bottom: 100px;
+    left: 1.8%;
     right: 60%;
     text-align: center;
     font-size: 1.2em;
@@ -150,10 +154,9 @@ th>p{
     opacity: 0.8;
 }
 td{ 
-    top:50px;
+    top:2px;
     height: 20px;
-    left: -33%;
-    right: -60%;
+    left: -40.9%;
     font-size: 1em; 
 }  
 td>p{
@@ -162,7 +165,7 @@ td>p{
 }
 #td3{
        position: relative;
-       top:25px;
+       top:-5px;
     }   
 .td_input{
       min-width: 30%;
@@ -174,13 +177,25 @@ td>p{
     width: 150px;
     height: 3em;
     font-size: 0.8em;
-}    
+}
+
 #submit_btn{
- 
-    margin: 30px 22% 20px 49.7%;
-    font-size: 2em;
-    
-} 
+    position: relative;
+    visibility: visible;
+    top:-30px;
+    left:110%;
+    font-size: 1.2em;
+    margin: 0 auto 0;
+   
+  
+  
+}
+#submit_btn:active{
+   top:-31px;
+}   
+#joinComplete>button:active {
+	top:401px;
+}    
     #joinComplete>button{
       left: 36%;
     right: 20%; 

@@ -97,7 +97,7 @@
            });
           
                   
-        $("#submit_btn").css("visibility", "hidden");
+        /*$("#submit_btn").css("visibility", "hidden");*/
         
         $("#submit_btn").on("click",function(){
           register();

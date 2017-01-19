@@ -6,16 +6,14 @@
     
       <script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/custom_bootstrap.css" rel="stylesheet">   
+
     <link href="css/Header.css" rel="stylesheet">
     <link href="css/TheEdzi.css" rel="stylesheet">
-    <link href="css/ThirdPart.css" rel="stylesheet">
     <link href="css/Join.css" rel="stylesheet">
 
     <script type="text/javascript" src="js/register.js"></script>
-    <script type="text/javascript" src="js/leftMoveCss.js"></script>
+  
     
 </head>
 <body>
@@ -36,7 +34,7 @@
               id="join_member">
               <input type="hidden" name="ACCESS" value="true">
                  <table>
-                    <tbody>
+                    <tbody id="tbody">
                      <tr>
                          <th class="join_th">Edzi계정(5~15자리)<p>영문 및 숫자를 입력해주세요</p></th>
                          <td id="td1" class="td">
@@ -57,11 +55,19 @@
                              <input type="password" class="td_input" id="confirm_pw" name="confirm_pw" placeholder="비밀번호 확인" value="">
                              <div id="confirm_dpw" >&ensp;</div>
                           </td>
+                        
+                     </tr>
+                     <tr>
+                          
+                          <td>
+                           <input type="button" value="완료" id="submit_btn">
+                         </td>
                      </tr>
                    </tbody>
                    
                      
                  </table>
+                 
                   <div class="fwin" id="cuca">
                         <div id="logotitle">
                             <hr>
@@ -71,7 +77,7 @@
                             <img id="imgcuca" src="img/cuca1.png" alt="Choice us&Choice all">
                         </div>
                     </div>
-               <input type="button" value="완료" id="submit_btn">
+               
         
         </form>
         

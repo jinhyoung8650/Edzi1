@@ -1,4 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function(e){
+
+  
 frame = {
     defaultRate:15,
     width: 960,
@@ -95,20 +97,19 @@ frame.addImage = function(url) {
  
     
 var remocon =function(){
-    $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 4px solid black; border-radius: 20px; top: 120px; left:93.2%; margin:0 auto; z-index:101;'>");/*리모콘 div*/
-    var  container= $("#container").draggable();
+    $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 4px solid black; border-radius: 20px; top: 120px; right:0.2%; z-index:101;'>");/*리모콘 div*/
+  
+    var  container= $("#container").draggable({ containment: "parent"  });
 
-    $("#container").on('scroll touchmove mousewheel', function(e) {
-       e.preventDefault();
-       e.stopPropagation(); 
-       return false;
-    });
+     
+       console.log($("#container").offset().top);
     /*이미지 등록*/
     var remocon = new frame.animation({
          url : "img/remocon.png",
     });
      var top_Button = new frame.animation({
-         offsetx: 1.3,
+         offsetx: 22.535,
+         offsety:-0.2,
          url : "img/top_button.png",
     });
     var btm_Button = new frame.animation({
@@ -153,12 +154,12 @@ var remocon =function(){
        });
     });
     top_ButtonImg.on("hover",function(){
-        top_ButtonImg.css({border: '2px solid black ',borderRadius: '50%'});
+        top_ButtonImg.css({border: '1px solid black ',borderRadius: '90%'});
     }).on("mouseleave",function(){
         top_ButtonImg.css({border: '0px',borderRadius: '50%'});
     });
      btm_ButtonImg.on("hover",function(){
-        btm_ButtonImg.css({border: '2px solid black',borderRadius: '50%'});
+        btm_ButtonImg.css({border: '1px solid black',borderRadius: '90%'});
     }).on("mouseleave",function(){
         btm_ButtonImg.css({border: '0px',borderRadius: '50%'});
     });
@@ -176,6 +177,7 @@ function currentScroll(){
             }
           })
    }
+   
 /*1024d이상 */
 if (matchMedia("screen and (min-width: 1024px)").matches) {
      
@@ -183,8 +185,14 @@ if (matchMedia("screen and (min-width: 1024px)").matches) {
     remocon();
     currentScroll();
     
-    $(window).scroll(function(event){
-          currentScroll(); 
+    $(window).scroll(function(e){
+    currentScroll(); 
+    var con = $('#container');
+	if($("#container").offset().top  < 120 ){
+        con.css({top:"120px"}); 
+    }else if((con.height()+con.offset().top)>$("html body").height()){
+        con.css({top:"120px"}); 
+    }
     });
 }
 else{
