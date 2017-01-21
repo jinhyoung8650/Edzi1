@@ -127,7 +127,7 @@ if(empty($allPost)){
 			}
           
              
-           echo json_encode(array('msg'=>$tr,'paging'=>$paging,"page"=>$page,"allPage"=>$allPage,'firstPage'=>$firstPage,"sql"=>$sql,"searchColumn"=>$searchColumn, "searchText"=>$searchText,"nextPage"=>$nextPage,"prevPage"=>$prevPage,"a"=>$currentSection));
+           echo json_encode(array('msg'=>$tr,'paging'=>$paging,"page"=>$page,"allPage"=>$allPage,'firstPage'=>$firstPage,"sql"=>$sql,"searchColumn"=>$searchColumn, "searchText"=>$searchText,));
             
   }
 					

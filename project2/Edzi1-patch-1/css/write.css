@@ -1,0 +1,166 @@
+.boardArticle{
+    width: 100%;
+    height: 45em;
+    background-color: whitesmoke;
+}
+.boardArticle>h3{
+    text-align: center;
+    position: relative;
+    top: 5em;
+}
+#image{
+    width: 80%;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.1;
+    top: 18em;
+    left: 10%;
+}
+#boardWrite{
+    width: 100%;
+}
+#boardWrite form{
+    position: relative;
+    width: 40%;
+    top: 7em;
+    left: 30%;
+}
+#boardWrite table{
+    width: 100%;
+}
+#boardWrite table>tr{
+    width: 100%;
+}
+#boardWrite th{
+    width: 4em;
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+}
+#boardWrite td{
+    padding: 5px;
+}
+#boardWrite #bTitle{
+    width: 40%;
+    height: 2em;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 0px;
+    border-right: 0px;
+    opacity: 0.7;
+}
+#boardWrite #bContent{
+    width: 95%;
+    height: 370px;
+    text-align: left;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 0px;
+    border-right: 0px;
+    opacity: 0.7;
+}
+#boardWrite #bPassword{
+    width: 30%;
+    height: 2em;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 0px;
+    border-right: 0px;
+    opacity: 0.7;
+}
+#boardWrite .btnSet{
+    text-align: right;
+}
+.btnSet>button{
+    border: 0px;
+    background-color: whitesmoke;
+    text-decoration: underline;
+    color: black;
+}
+.btnSet>a{
+    color: black;
+}
+/*---------------------------mobile---------------------------------*/
+@media all and (max-width: 767px){
+    .boardArticle>h3{
+        top: 1em;
+    }
+    #image{
+        width: 50%;
+        position: absolute;
+        z-index: 0;
+        opacity: 0.2;
+        top: 18em;
+        left: 25%;
+    }
+    #boardWrite th{
+        width: 2em;
+        padding: 0px;
+        text-align: left;
+        vertical-align: middle;
+        white-space: pre;
+    }
+    #boardWrite form{
+        width: 99.9%;
+        top: 3em;
+        left: 0;
+    }
+    #boardWrite #bTitle{
+        width: 95%;
+        height: 2em;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;    
+        border-left: 0px;
+        border-right: 0px;
+    }
+    #boardWrite #bPassword{
+        width: 50%;
+        height: 2em;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-left: 0px;
+        border-right: 0px;
+    }
+}
+/*---------------------------tab---------------------------------*/
+@media all and (min-width: 767.1px) and (max-width: 1024px){
+    .boardArticle>h3{
+        top: 3em;
+    }
+    #image{
+        width: 50%;
+        position: absolute;
+        z-index: 0;
+        opacity: 0.2;
+        top: 18em;
+        left: 25%;
+    }
+    #boardWrite th{
+        width: 3em;
+        padding: 5px;
+        text-align: left;
+        vertical-align: middle;
+        white-space: pre;
+    }
+    #boardWrite form{
+        width: 80%;
+        top: 5em;
+        left: 9.9%;
+    }
+    #boardWrite #bTitle{
+        width: 50%;
+        height: 2em;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;    
+        border-left: 0px;
+        border-right: 0px;
+    }
+    #boardWrite #bPassword{
+        width: 40%;
+        height: 2em;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-left: 0px;
+        border-right: 0px;
+    }
+}

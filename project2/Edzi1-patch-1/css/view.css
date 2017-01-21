@@ -1,0 +1,111 @@
+hr{
+    border-color: black;
+}
+.boardArticle{
+    padding-top: 1em;
+}
+.boardArticle>h3{
+    text-align: center;
+}
+#boardView{
+    margin-top: 1em;
+    padding: 1em;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    background-color: #eee;
+    margin-bottom: 2em;
+}
+#boardView #boardTitle{
+    border-bottom: 2px solid #333;
+}
+#boardView #boardInfo #boardHit{
+    float: right;
+}
+#boardView #boardContent{
+    margin: 1em;
+    padding: 1em;
+    background-color: whitesmoke;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#boardView .btnSet{
+    text-align: right;
+}
+#boardView .btnSet>a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+#boardComment table{
+    width: 100%;
+}
+#boardComment table th{
+    width: 100px;
+    padding: 0 5px;
+    text-align: right;
+    vertical-align: middle;
+}
+#boardComment table td{
+    padding: 5px;
+    text-align: left;
+}
+	
+#boardComment #coContent{
+    width: 99%;
+    height: 5em;
+}
+	
+#commentView ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+#commentView .oneDepth{
+    margin: 10px 0;
+    padding: 10px;
+    background: #eee;
+} 
+#commentView .twoDepth{
+    margin: 20px;
+    padding: 10px;
+    background: #fff;
+}
+#commentView .commentInfo{
+    overflow: hidden;
+}
+#commentView .commentId{
+    float: left;
+} 
+#commentView .commentBtn{
+    float: right;
+}
+#commentView .commentBtn>a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+#commentView .commentContent{
+    background-color: white;
+    clear: both;
+}
+#commentWrite{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: whitesmoke;
+    padding: 0.5em;
+}
+/*---------------------------mobile---------------------------------*/
+@media all and (max-width: 767px){
+}
+/*---------------------------tab---------------------------------*/
+@media all and (min-width: 767.1px) and (max-width: 1024px){
+}
+/*----------------------------pc--------------------------------*/
+@media all and (min-width: 1024.1px){
+}

@@ -10,14 +10,16 @@
 .product_li{
     display: inline-block;
     width: 30%;
+    margin:12px 0 0 12px;
     list-style: none;
-    border: 1px solid silver;
+
 }
  .product_div{
         position: relative;
         left: -40.5px;
         top:-15.9px;
         width: 100%;
+     
         text-align: center;
     }
 .product_figure{
@@ -32,11 +34,10 @@
     box-sizing: border-box;
     text-align: center;
     background-color: darkred;
-    padding: 5px;
+    padding: 3px;
     z-index: 100;
     width: 100%;
-    font-size: 1.5em;
-    max-height: 100%;
+    font-size: 1.0em;
     overflow: hidden;
     top: 50%;
     left: 0;
@@ -48,7 +49,6 @@
     color: white;
 }
 .product_figure a img{
-   
     width: 100%;
     max-height: 400px;
     height:300px;
@@ -79,14 +79,16 @@
     }
     .product_section ul{
         width: 99%;
-        margin-left: 2.5%;
+        margin-left: 1.5%;
     }
     .product_li{
         display: inline-block;
-        width: 47%;
+        width: 90%;
+         margin:12px 12px 2% 25px;
         margin-bottom: 2%;
         list-style: none;
     }
+ 
     .product_figure>a{
         text-decoration: none;
         color: black;
@@ -97,6 +99,7 @@
         text-align: center;
     }
     .product_div>a{
+        display: none;
         position: relative;
         left: 46px;
         top:-10px;
@@ -192,25 +195,21 @@
     }
     .product_figure:hover figcaption{
         opacity: 0.8;
-        transform: translate3d(0, -60%, 0);
+        transform: translate3d(0, 90%, 0);
         transition: all 1s;
         transition-delay: 0.5s;
     }
     .product_figure::before{ 
         content: '';
         width: 100%;
-        height: 82%;
+        height: 90%;
         display: block;
         background: white;
         position: absolute;
         opacity: 0.3;
         z-index: 100;
         transform: translate3d(0%, -100%, 0);
-        transition: all 0.5s;
+        transition: all 0.9s;
     }
-    .product_figure:hover img{ 
-        transform-style: preserve-3d;
-        animation: product_caption 1.0s ease;
-        animation-fill-mode: forwards;
-    }    
+     
 }

@@ -130,14 +130,17 @@ $(document).ready(function(){
         dots[count].css('background-color', 'black');
     });
     
-    $('.dots').click(function(){
+    $('.dots').click(function(e){
+       
+     
+        dots[count].css('background-color', 'black');
         var text=$(this).text();
         count=text;
         imgc.css('left', '-'+count*100+'%');
         for(i=0;i<5;i++){
             dots[i].css('background-color', 'silver');
         }
-        dots[count].css('background-color', 'black');
+       
     });
     
     lbtnr.click(function(){
@@ -152,7 +155,8 @@ $(document).ready(function(){
         }
         dots[count].css('background-color', 'black');
     });
-    rbtnr.click(function(){
+    rbtnr.click(function(e){
+     
         count++;
         imgc.css('left', '-'+count*100+'%');
         if(count==5){

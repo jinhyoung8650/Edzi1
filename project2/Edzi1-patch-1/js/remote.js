@@ -100,15 +100,18 @@ var remocon =function(){
     $("html").append("<div id='container' style='position: fixed;  width: 60px; height: 110px; border: 4px solid black; border-radius: 20px; top: 120px; right:0.2%; z-index:101;'>");/*리모콘 div*/
   
     var  container= $("#container").draggable({ containment: "parent"  });
-
-     
-       console.log($("#container").offset().top);
+     $("#container").on('scroll touchmove mousewheel', function(e) {
+       e.preventDefault();
+       e.stopPropagation(); 
+       return false;
+    });
+      
     /*이미지 등록*/
     var remocon = new frame.animation({
          url : "img/remocon.png",
     });
      var top_Button = new frame.animation({
-         offsetx: 22.535,
+         offsetx: 22.9,
          offsety:-0.2,
          url : "img/top_button.png",
     });
@@ -118,7 +121,7 @@ var remocon =function(){
     
     /*이미지 크기조정*/
     remoconImg  = frame.addSprite(container,"remoconImg",{width: 44, height:                                                36,x:1.5,y:0});
-    top_ButtonImg  = frame.addSprite(container,"top_ButtonImg",{width: 17.8, height:                                          27,x:7.3,y:76.8});
+    top_ButtonImg  = frame.addSprite(container,"top_ButtonImg",{width: 17.0, height:                                          27,x:7.3,y:76.8});
     btm_ButtonImg  = frame.addSprite(container,"btm_ButtonImg",{width: 17.0, height:                                          27,x:34.5,y:76.8});
     currentNumber = frame.addSprite(container,"currentNumber",                                                              {width:20,height:40,x:8.1,y:34});
     allNumber  = frame.addSprite(container,"allNumber",{width: 20, height:                                                  40,x:35.5,y:34.1});
@@ -154,7 +157,7 @@ var remocon =function(){
        });
     });
     top_ButtonImg.on("hover",function(){
-        top_ButtonImg.css({border: '1px solid black ',borderRadius: '90%'});
+        top_ButtonImg.css({border: '1px solid black ',borderRadius: '90%',});
     }).on("mouseleave",function(){
         top_ButtonImg.css({border: '0px',borderRadius: '50%'});
     });
@@ -166,16 +169,15 @@ var remocon =function(){
 }
  /*스크롤조정*/
 function currentScroll(){
-       var sec_position=$(".sec");
-        
+   var sec_position=$(".sec");
     scroll_height=$(document).scrollTop();
        var firstSec=$(".sec:eq(0)").offset().top; 
          sec_position.each(function(index,data){
           var pos = $(this).offset().top*0.9;
            if(scroll_height+firstSec > pos){
               $("#log").text(index+1);
-            }
-          })
+       }
+     });
    }
    
 /*1024d이상 */
@@ -212,7 +214,7 @@ else{
         var device_width=$(window).width();
         if(device_width>1025){
       
-            if ( $("#container").length > 0 ) {
+            if ($("#container").length > 0) {
                 $("#container").show();
             } else {
                 

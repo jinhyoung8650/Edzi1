@@ -7,7 +7,6 @@
               type:"post",
               data:$("#join_member").serialize(),
               success:function(data){
-                  console.log("aaaaa");
                   
                 if(data['result']=="success"){
                    $("#submit_btn").css("visibility", "hidden"); $("#join_member").css("visibility", "hidden");
@@ -75,6 +74,18 @@
           $('#id').off('keyup focus blur').on("keyup focus blur",function(e){
               e.preventDefault();
               confirm();
+            var confirm_pw=$("#confirm_pw").val();
+             var pw=$("#pw").val();
+             if(chkPwd( $.trim($('#pw').val()))){
+                
+                $("#confirm_vali").text("");
+              if((pw==confirm_pw)&&($("#confirm_did").text()=="등록가능합니다")){
+                $("#submit_btn").css("visibility", "visible");  
+                 }else{
+                        $("#submit_btn").css("visibility", "hidden");
+                   }
+              
+             }
           });
            $('input[type=password]').off('keyup focus blur').on("keyup focus blur",function(e){
               e.preventDefault();
@@ -86,9 +97,13 @@
                 $("#confirm_vali").text("");
                   if((pw==confirm_pw)){
                   $("#confirm_dpw").text('비밀번호가 일치합니다');
-                  $("#submit_btn").css("visibility", "visible");      
+                    if($("#confirm_did").text()=="등록가능합니다"){
+                          $("#submit_btn").css("visibility", "visible");  
+                   }
                   }else{
                      $("#confirm_dpw").text('비밀번호가 일치하지 않습니다');
+                     $("#submit_btn").css("visibility", "hidden");
+                   
                   }
                  return false;
 
@@ -97,7 +112,7 @@
            });
           
                   
-        /*$("#submit_btn").css("visibility", "hidden");*/
+        $("#submit_btn").css("visibility", "hidden");
         
         $("#submit_btn").on("click",function(){
           register();

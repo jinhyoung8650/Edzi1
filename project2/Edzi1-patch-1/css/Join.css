@@ -1,11 +1,12 @@
 html, body { height:100%; }
 
 #sec1{
-     height: 70%;
-     margin:  1em auto 1em;
+    width: 100%;
+    height: 70%;
+    margin:  1em auto 1em;
 }
 footer{
-        height: 120px;
+    height: 120px;
 }
 #join_member{
     position: relative;
@@ -13,7 +14,6 @@ footer{
 }
 table{
     position: relative;
-    border-collapse: separate;
     width:70%;
 }
 th{
@@ -38,8 +38,7 @@ td{
 #submit_btn{
     position: relative;
     visibility: hidden;
-    top:40px;
-    margin: 0px 0% 20px 48.2%;
+   
     font-size: 2em;
     box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
@@ -66,17 +65,17 @@ td{
     top:41px;
 }
 #joinComplete{
+    text-align: center;
     visibility: hidden;
     width: 100%;
-    
+    display: inline-block;
 }
 
 #joinComplete>button{
-    position:absolute;
     z-index: 1;
-    top:400px;
-    left: 46%;
-    right: 40%;
+    position: relative;
+    top:250px;
+    right: 200px;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
@@ -99,45 +98,41 @@ td{
 	background-color:#e9e9e9;
 }
 #joinComplete>button:active {
-	top:401px;
+	top:249px;
 }
-
-#joinComplete>p{
+#joinComplete>a{
     position: relative;
-    top: 170px;
-    font-size: 2em;
+    top: 120px;
+    left: 70px;
+    display: inline-block;
     text-align: center;
+    font-size: 2em;
 }
 a{  
     color:#000000;
     text-decoration: none;
 }
 /*---------------------------mobile---------------------------------*/
-@media all and (max-width: 767px) {
-   
+@media all and (max-width: 329px){
 #join_member{
     position: relative;
     width: 99%;
     top:-50px;
     left: 12%;
-     margin:  0 auto ;
-     padding: 0 auto;
-   
-  
+    margin:  0 auto ;
+    padding: 0 auto;
+ 
 }
  
 table{
     width: 30%;
-     margin:  1em auto 1em;
-    left: -0.5%;
+    margin:  1em auto 1em;
+    left: 4%;
     position: relative;
-  
     top:1em;
 }
-    
- 
 #cuca{
-        display: none;
+      display: none;
 }
 th{
    padding-bottom: 100px;
@@ -164,13 +159,92 @@ td>p{
     opacity: 0.7;
 }
 #td3{
-       position: relative;
-       top:-5px;
+    position: relative;
+    top:-5px;
     }   
 .td_input{
-      min-width: 30%;
-      max-width: 70%;
-      font-size: 0.9em;
+    min-width: 30%;
+    max-width: 70%;
+    font-size: 0.9em;
+    }
+#confirm_did,#confirm_dpw,#confirm_vali{
+    top:7px;
+    width: 150px;
+    height: 3em;
+    font-size: 0.8em;
+}
+    
+    
+#joinComplete>a{
+    position: relative;
+    top: 120px;
+    left: 00px;
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+}
+#joinComplete>button{
+    z-index: 1;
+    position: relative;
+    top:250px;
+    right: 00px;
+  }
+}
+@media all and (min-width:330px) and (max-width: 767px) {
+#joinForm{
+    display: inline-block;
+    width: 100%;
+}
+#join_member{
+    float: right;
+    position: relative;
+    width: 50%;
+    top:-20px;
+    margin:  0 100px; 0 370px; 
+}
+ 
+table{
+    display: inline-block;
+    width: 20%;
+    margin: 0 auto;
+    position: relative;
+    top:1em;
+}
+#cuca{
+      display: none;
+}
+th{
+   padding-bottom: 100px;
+    left: 1.8%;
+    right: 60%;
+    text-align: center;
+    font-size: 1.2em;
+    min-width: 200px;
+}
+th>p{
+    position: relative;
+    left: 0%;
+    font-size: 0.6em;
+    opacity: 0.8;
+}
+td{ 
+    top:2px;
+    height: 20px;
+    left: -40.9%;
+    font-size: 1em; 
+}  
+td>p{
+    font-size: 0.3em;
+    opacity: 0.7;
+}
+#td3{
+    position: relative;
+    top:-5px;
+    }   
+.td_input{
+    min-width: 30%;
+    max-width: 70%;
+    font-size: 0.9em;
     }
 #confirm_did,#confirm_dpw,#confirm_vali{
     top:7px;
@@ -181,25 +255,33 @@ td>p{
 
 #submit_btn{
     position: relative;
-    visibility: visible;
+    visibility: hidden;
     top:-30px;
     left:110%;
     font-size: 1.2em;
     margin: 0 auto 0;
-   
-  
-  
 }
 #submit_btn:active{
    top:-31px;
-}   
+} 
+#joinComplete>a{
+    position: relative;
+    top: 120px;
+    left: 70px;
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+}    
 #joinComplete>button:active {
 	top:401px;
 }    
-    #joinComplete>button{
-      left: 36%;
-    right: 20%; 
-    }
+#joinComplete>button{
+    z-index: 1;
+    position: relative;
+    top:250px;
+    right: 100px;
+}  
+    
 }
 
 /*---------------------------tab---------------------------------*/
@@ -245,34 +327,39 @@ th>p{
 } 
     
 #imgcuca{
-        position: relative;
-        width: 55%;
-        margin-top: 1.5em;
-        margin-left: 26%;
-        height: 9em;
+    position: relative;
+    width: 70%;
+    margin-top: 2.4em;
+    margin-left: 16%;
+    height: 9em;
 }
 #cuca{
-        position: absolute;
-        top:4.6em;
-        left: 480px;
-       
-        height:18.4em;
-   
-        width: 50%;
-        background-image: url(/img/back1.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+    position: absolute;
+    top:4.6em;
+    left: 480px;
+    height:18.4em;
+    width: 50%;
+    background-image: url(/img/back1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }  
-    
+#submit_btn{
+    top:-70px;
+    left: 133%;
+    margin: 0 auto;
+}
+#submit_btn:active{
+    top:-71px;   
+} 
+  
 }
 
 /*----------------------------pc--------------------------------*/
 @media all and (min-width: 1024.1px){
-    #join_member{
+#join_member{
     width: 60%;
-    top:2em;
     left: 20%;
-    }
+}
 table{
     width: 100%;
     left: 10%;
@@ -298,10 +385,10 @@ th>p{
 }
    
 .td_input{
-      width: 220px;
-      height: 20%;
-      font-size: 1.3em;
-    }
+    width: 220px;
+    height: 20%;
+    font-size: 1.3em;
+}
 #confirm_did,#confirm_dpw,#confirm_vali{
     width: 220px;
     height: 3em;
@@ -309,22 +396,28 @@ th>p{
 } 
     
 #imgcuca{
-        position: relative;
-        width: 55%;
-        margin-top: 1.5em;
-        margin-left: 26%;
-        height: 9em;
+    position: relative;
+    width: 65%;
+    margin-top: 1.5em;
+    margin-left: 20%;
+    height: 9em;
 }
-#cuca{  
-     
-        position: absolute;
-        top:4.6em;
-        left: 560px;
-        height:18.4em;
-        width: 40%;
-        background-image: url(/img/back1.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+#cuca{    
+    position: absolute;
+    top:4.6em;
+    left: 560px;
+    height:18.4em;
+    width: 40%;
+    background-image: url(/img/back1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }    
-    
+#submit_btn{
+    top:-40px;
+    left: 133%;
+    margin: 0 auto;
+}
+#submit_btn:active{
+    top:-41px;   
+}
 }

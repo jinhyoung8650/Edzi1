@@ -33,6 +33,10 @@
             echo json_encode(array('result'=>'f','msg'=>'아이디 또는 비밀번호를 입력해주세요'));
             exit;
     }
+   if(empty($_POST['id'])){
+            echo json_encode(array('result'=>'f','msg'=>'아이디 또는 비밀번호를 입력해주세요'));
+            exit;
+    }
 
     // 아이디 불일 치시
     if($id!=$row['id']){

@@ -31,7 +31,7 @@
 					<li>
 						<div id="co_<?php echo $row2['co_no']?>" class="commentSet">
 							<div class="commentInfo">
-								<div class="commentId">작성자:  <span class="coId"><?php echo $row2['co_id']?></span></div>
+								<div class="commentId">작성자: <span class="coId"><?php echo $row2['co_id']?></span></div>
 								<div class="commentBtn">
 									<a href="#" class="comt modify">수정</a>
 									<a href="#" class="comt delete">삭제</a>
@@ -49,7 +49,8 @@
 		<?php } ?>
 	</form>
 </div>
-<form action="comment_update.php" method="post">
+<form action="comment_update.php" method="post" id="commentWrite">
+    <span>댓글 작성</span>
 	<input type="hidden" name="bno" value="<?php echo $bNo?>">
 	<table>
 		<tbody>
@@ -59,18 +60,20 @@
 			</tr>
 			<tr>
 				<th scope="row">
-			<label for="coPassword">비밀번호</label></th>
+				    <label for="coPassword">비밀번호</label>
+				</th>
 				<td><input type="password" name="coPassword" id="coPassword"></td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="btnSet">
-		<input type="submit" value="코멘트 작성">
+		<input type="submit" value="댓글 등록">
 	</div>
 </form>
 
+<script src="js/write.js" type="text/javascript"></script>
 <script>
-	$(document).ready(function () {
+	$(document).ready(function() {
 		var commentSet = '';
 		var action = '';
 		$('#commentView').delegate('.comt', 'click', function () {
@@ -85,7 +88,7 @@
 			$('.comt').hide();
 			$(this).parents('.commentBtn').append(commentBtn);
 			
-			
+            
 			//commentInfo의 ID를 가져온다.
 			var co_no = $(this).parents('.commentSet').attr('id');
 			
@@ -102,8 +105,6 @@
 			if($(this).hasClass('write')) {
 				//댓글 쓰기
 				action = 'w';
-				//ID 영역 출력
-				coId = '<input type="text" name="coId" id="coId">';
 			
 			} else if($(this).hasClass('modify')) {
 				//댓글 수정
@@ -111,15 +112,12 @@
 				$(this).parents('.commentBtn');
 				
 				var modifyParent = $(this).parents('.commentSet');
-				var coId = modifyParent.find('.coId').text();
 				var coContent = modifyParent.find('.commentContent').text();
 				
 			} else if($(this).hasClass('delete')) {
 				//댓글 삭제	
 				action = 'd';
-				
 			}
-			
 				comment += '<div class="writeComment">';
 				comment += '	<input type="hidden" name="w" value="' + action + '">';
 				comment += addOption;
@@ -127,21 +125,15 @@
 				comment += '		<tbody>';
 				if(action !== 'd') {
 					comment += '			<tr>';
-					comment += '				<th scope="row"><label for="coId">아이디</label></th>';
-					comment += '				<td>' + coId + '</td>';
-					comment += '			</tr>';
-				}
-				comment += '			<tr>';
-				comment += '				<th scope="row">';
-				comment += '			<label for="coPassword">비밀번호</label></th>';
-				comment += '				<td><input type="password" name="coPassword" id="coPassword"></td>';
-				comment += '			</tr>';				
-				if(action !== 'd') {
-					comment += '			<tr>';
 					comment += '				<th scope="row"><label for="coContent">내용</label></th>';
 					comment += '				<td><textarea name="coContent" id="coContent">' + coContent + '</textarea></td>';
 					comment += '			</tr>';
 				}
+                comment += '			<tr>';
+				comment += '				<th scope="row">';
+				comment += '			        <label for="coPassword">비밀번호</label></th>';
+				comment += '				<td><input type="password" name="coPassword" id="coPassword"></td>';
+				comment += '			</tr>';
 				comment += '		</tbody>';
 				comment += '	</table>';
 				comment += '	<div class="btnSet">';
@@ -154,15 +146,17 @@
 		});
 		
 		$('#commentView').delegate(".cancel", "click", function () {
-			if(action == 'w') {
+			if(action == 'w'){
 				$('.writeComment').remove();
-			} else if(action == 'u') {
+			} else if(action == 'u'){
+				$('.writeComment').remove();
+			} else if(action == 'd'){
 				$('.writeComment').remove();
 			}
-				$('.commentSet.active').removeClass('active');
-				$('.addComt').remove();
-				$('.comt').show();
-			return false;
+            $('.commentSet.active').removeClass('active');
+			$('.addComt').remove();
+			$('.comt').show();
+            return false;
 		});
 	});
 </script>

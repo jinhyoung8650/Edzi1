@@ -1,0 +1,38 @@
+footer{
+    padding-bottom: 1em;
+    padding-top: 1em;    
+    background-color: #eee;
+}
+footer>span{
+    display: inline-block;
+    margin-left: 5%;
+}
+footer>span>h1{
+    margin: 0;
+}
+footer>span>hr{
+    border-color: black;
+}
+/*---------------------------mobile---------------------------------*/
+@media all and (max-width: 767px){
+    footer>address{
+        font-size: 80%;
+        margin-left: 10%;
+        word-break: keep-all;
+    }
+}
+/*---------------------------tab---------------------------------*/
+@media all and (min-width: 767.1px) and (max-width: 1024px){
+    footer>span>h1{
+        font-size: 1.5em;
+    }
+    footer>address{
+        margin-left: 17%;
+    }
+}
+/*----------------------------pc--------------------------------*/
+@media all and (min-width: 1024.1px){
+    footer>address{
+        margin-left: 17%;
+    }
+}

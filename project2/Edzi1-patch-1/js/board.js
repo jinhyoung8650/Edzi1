@@ -1,12 +1,14 @@
   function pageMove(pageSet){
-           var searchColumn =  $("#searchColumn").val();
-           var searchText   =  $("#searchText").val(); 
+            searchColumn =  $("#searchColumn").val();
+            searchText   =  $("#searchText").val();
+      
       $.ajax({
                  url:"board.php",
                  DataTyPe:"json",
                  type:"GET",
                  data:({pageInt:pageSet,searchText:searchText,searchColumn:searchColumn}),
                  success:function(data){
+                     console.log(searchText);
                 if(data['msg']==null){
                    $(".tr").remove();
                    $(".ul").remove();
@@ -33,7 +35,7 @@
            url:"board.php",
            DataTyPe:"json",
            type:"GET",
-           data:({pageInt:1}),
+           data:({pageInt:1,searchText:searchText,searchColumn:searchColumn }),
            success:function(data){
               var last=direction;
                if(last="lastPage"){
@@ -45,35 +47,33 @@
    }
 
      $(document).ready(function(e){
+         var searchColumn ="";
+         var searchText  = "";
          var move=1;
          var oneSection=3;
-         pageMove(1);
-         $(document).on("click",".page_end",function(){
-             last("lastPage");
+         pageMove(move);
+         
+         $(document).on("touchstart click",".page_end",function(){
+            last("lastPage");
          });   
-         $(document).on("click",".page_start",function(){
-            pageMove(1);
-         });  
-         $(document).on("click",".page_next",function(){
-            move+=oneSection;
-           pageMove( move);
-         });   
-         $(document).on("click",".page_prev",function(){
-             move-=oneSection;
+         $(document).on("touchstart click",".page_start",function(){
             pageMove(move);
          });  
+         $(document).on("touchstart click",".page_next",function(){
+            move+=oneSection;
+            pageMove(move);
+         });   
+         $(document).on("touchstart click",".page_prev",function(){
+             move-=oneSection;
+             pageMove(move);
+         });  
            
-         $(document).on("click",".iPage",function(e){/*여기 한번더 눌러야 실행되는데
-                                                       그냥 접근은 못하냐?*/
-            
-             $(".iPage").each(function(index,data){
-                  $(this).on("click",function(){
-                  pageMove($(data).text());
-                  });
-             });
+         $(document).on("touchstart click",".iPage",function(){
+           pageMove($(this).text());                                    
+     
          });
-         $("#search").on("click",function(){
-               pageMove(1);
+         $("#search").on("touchstart click",function(){
+               pageMove(move);
          });
           
 });

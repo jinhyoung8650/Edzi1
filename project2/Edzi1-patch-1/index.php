@@ -47,7 +47,7 @@
         $paging = null;
 	} else {
 
-		$onePage = 10; // 한 페이지에 보여줄 게시글의 수.
+		$onePage = 3; // 한 페이지에 보여줄 게시글의 수.
 		$allPage = ceil($allPost / $onePage); //전체 페이지의 수
 		if($page < 1 && $page > $allPage) {
 ?>
@@ -59,7 +59,7 @@
 			exit;
 		}
 	
-		$oneSection = 10; //한번에 보여줄 총 페이지 개수(1 ~ 10, 11 ~ 20 ...)
+		$oneSection = 3; //한번에 보여줄 총 페이지 개수(1 ~ 10, 11 ~ 20 ...)
 		$currentSection = ceil($page / $oneSection); //현재 섹션
 		$allSection = ceil($allPage / $oneSection); //전체 섹션의 수
 		
@@ -96,6 +96,7 @@
 		//마지막 섹션이 아니라면 다음 버튼을 생성
 		if($currentSection != $allSection) { 
 			$paging .= '<li class="page page_next"><a href="./index.php?page=' . $nextPage . $subString . '">다음</a></li>';
+            echo $page;
 		}
 		
 		//마지막 페이지가 아니라면 끝 버튼을 생성
@@ -137,7 +138,7 @@
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/Edzi.js"></script>
     <script type="text/javascript" src="js/write.js"></script>
-    <script type="text/javascript" src="js/View.js"></script>
+   
 </head>
 <body>
    
